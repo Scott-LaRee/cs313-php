@@ -1,0 +1,12 @@
+
+h1  {
+  color:blue;
+   }
+	
+.outerDiv { 
+  text-align: center; 
+  }
+  
+.innerDiv {
+  display: inline-block;
+}
