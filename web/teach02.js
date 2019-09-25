@@ -3,12 +3,12 @@ function buttonClicked() {
 }
 
 function changeColor() {
-	var color = document.getElementById("newColor").innerHTML;
+	var color = document.getElementById("newColor").value;
 	
 	document.getElementById('firstDiv').style.color = color;
 }
 
-function changColorjQuery() {
+function changeColorjQuery() {
 	var div2 = $("#secondDiv");
 	var textBox = $("#jQueryColor");
 	
