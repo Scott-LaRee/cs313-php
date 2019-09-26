@@ -20,15 +20,16 @@ function changeColorjQuery() {
 
 function toggleOpacity() {
 	div3 = document.getElementById("thirdDiv");
-	if (div3.style.opacity == 1)
-		vanishText();
+	var opacity = window.getComputedStyle(div3);
+	if (opacity == 1)
+		vanishText(opacity);
 	else 
-		appearText();
+		appearText(opacity);
 }
 
-function vanishText() {
+function vanishText(var opacity) {
 	var div3 = document.getElementById("thirdDiv");
-	var opacity = div3.style.opacity;
+	//var opacity = div3.style.opacity;
 	var time = setInterval(frame, 5);
 	
 	function frame() {
@@ -42,9 +43,9 @@ function vanishText() {
 	var button = document.getElementById("toggle").innerHTML = "Appear!";
 }
 
-function appearText() {
+function appearText(var opacity) {
 	var div3 = document.getElementById("thirdDiv");
-	var opacity = div3.style.opacity;
+	//var opacity = div3.style.opacity;
 	var time = setInterval(frame, 5);
 	
 	function frame() {
