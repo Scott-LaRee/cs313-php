@@ -1,0 +1,155 @@
+#page {
+	display:grid;
+	grid-gap: 1rem;
+	grid-template-columns: 200px auto;
+	grid-template-row: 75px 30px auto 100px;
+}
+
+#head {
+	grid-column: 1 / 3;
+	grid-row: 1 / 3;
+}
+
+#bookPic {
+	grid-column: 1;
+	grid-row: 1;
+	height: auto;
+	align-content: center;
+}
+
+header h1 {
+	font-size: 50px;
+}
+
+
+#book {
+   height: 200px;
+   margin: 5px;
+   padding: 5px;
+   display: inline-block;
+   margin-left: auto;
+   margin-right: auto;
+   vertical-align: middle;   
+}
+
+#pageHead h1 {
+	grid-column: 2;
+	grid-row: 1;
+	align-content: center;
+    vertical-align: middle;
+	height: 100px;
+}
+
+
+#menuBar {
+    background-color: rgb(63,72,204);
+    overflow: hidden;
+    border: none;
+	margin:10px;
+	padding:10px;
+	width: 100%;
+	grid-column: 1 / 3;
+	grid-row: 2;
+}
+	
+#menuBarList {
+	list-style-type: none;
+	float: left;
+    color: white;
+    text-align: center;
+	margin: 0;
+    padding: 0;
+    text-decoration: none;
+    font-size: 12px;
+	grid-column: 1 / 3;
+	grid-row: 2;
+}
+.menuBarItem {
+    background-color: rgb(63,72,204);
+    display: inline;
+	padding: 10px 12px;
+	margin: 10px;
+	text-align: center;
+	color: white;
+	float: center;
+	border: none;
+	border-color: rgb(0,0,0);
+    transition: all .35s linear .35s;
+	font-size: 12px;
+}
+	
+.menuBarItem:hover {
+    background-color: rgb(139,0,0);
+	font-size: 14px;
+	border: solid;
+	border-color: white;
+}
+
+#sideBar {
+	background-color: rgb(63,72,204,.25);
+    overflow: hidden;
+    border: solid 1px;
+	border-color: rgb(63,72,204);
+	margin:10px;
+	padding:10px;
+	grid-column: 1;
+	grid-row: 3;
+}
+
+#sideBarList {
+	display: flex;
+	flex-direction: column;
+	list-style-type: none;
+	float: left;
+	margin: 0;
+    padding: 0;
+    text-decoration: none;
+    font-size: 12px;
+}
+
+.sideBarItem {
+    display: inline;
+	padding: 5px 5px;
+	margin: 5px;
+	text-align: left;
+	color: black;
+	border: none;
+	font-size: 12px;
+	height: 20px;
+}
+
+#content {
+	border: solid 1px;
+	border-color: rgb(63,72,204)
+	grid-column: 2;
+	grid-row: 3;
+	margin: 10px;
+    padding: 20px;
+	
+	font-size: 18px;
+}
+
+#content h1 {
+    text-align: center;
+}
+
+header a {
+	color: white;
+}
+	
+#staff {
+display: grid;
+grid-gap: 1rem;
+}
+
+@media only screen and (min-width:600px) {
+#staff {
+grid-template-columns: auto auto;
+}
+}
+
+@media only screen and (min-width:1200px) {
+#staff {
+grid-template-columns: auto auto auto auto;
+}
+}
