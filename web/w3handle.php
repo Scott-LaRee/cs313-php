@@ -1,38 +1,34 @@
 <?php
 $name = $email= $major = $comments  = "";
 
-if($_SERVER["REQUEST_METHOD"] == POST) {
-	$name = clean_input($_POST["name"]);
-	$email = clean_input($_POST["email"]);
-	$major = clean_input($_POST["major"]);
-	$comments = clean_input($_POST["comments"]);
-}
-
-function clean_input($data) {
-	$data = trim($data);
-	$data = stripslashes($data);
-	$data = htmlspecialchars($data);
-	return $data;
-}
-
+$name = htmlspecialchars($_POST["name"]);
+$email = htmlspecialchars($_POST["email"]);
+$major = htmlspecialchars($_POST["major"]);
+$continents = $_POST["continents"]:
+$comments = htmlspecialchars($_POST["comments"]);
 ?>
 
 <!DOCTYPE HTML>
 <html lang="en-us">
 <head>
 <meta charset="utf-8">
-<title>Week 3 Team Activity</title>
+<title>Form Results</title>
 </head>
 <body>
- echo "Name: " . $name . " <br>";
- echo "Email: " . $email . "<br>";
- echo "Major: " . $major . "<br>";
- echo "Comments: " . $comments . "<br>";
- 
- if(!empty($_POST['continents'])) {
-	foreach($_POST['continents'] as selected)
-	echo $selected."</br>";
- }
+<h1>Results</h1>
+<p>Your names is: <?=$name?></p>
+<p>Your email is: <a href = "mailto:<?=$email ?>"><?=$email ?></a></p>
+<p>Your major is: <?=$major ?></p>
+<p>You have been to the following places:</p>
+<ul>
+<?
+foreach ($places as $place)
+{
+	$place_clean = htmlspecialchars($place]);
+	echo "<li><p>$place_clean</p><li>";
+}
+?>
+</ul>
 </body>
 </html>
 
