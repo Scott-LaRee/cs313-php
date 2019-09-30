@@ -9,13 +9,13 @@ if($_SERVER["REQUEST_METHOD"] == POST) {
 }
 
 function clean_input($data) {
-	$data = trim$($data);
+	$data = trim($data);
 	$data = stripslashes($data);
 	$data = htmlspecialchars($data);
 	return $data;
 }
 
-
+?>
 
 <!DOCTYPE HTML>
 <html lang="en-us">
@@ -36,4 +36,3 @@ function clean_input($data) {
 </body>
 </html>
 
-?>
