@@ -4,7 +4,7 @@ $name = $email= $major = $comments  = "";
 $name = htmlspecialchars($_POST["name"]);
 $email = htmlspecialchars($_POST["email"]);
 $major = htmlspecialchars($_POST["major"]);
-$continents = $_POST["continents"]:
+$continents = $_POST["continents"];
 $comments = htmlspecialchars($_POST["comments"]);
 ?>
 
@@ -24,7 +24,7 @@ $comments = htmlspecialchars($_POST["comments"]);
 <?
 foreach ($places as $place)
 {
-	$place_clean = htmlspecialchars($place]);
+	$place_clean = htmlspecialchars($place);
 	echo "<li><p>$place_clean</p><li>";
 }
 ?>
