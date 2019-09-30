@@ -22,10 +22,10 @@ $comments = htmlspecialchars($_POST["comments"]);
 <p>You have been to the following places:</p>
 <ul>
 <?
-foreach ($places as $place)
+foreach ($continents as $continent)
 {
-	$place_clean = htmlspecialchars($place);
-	echo "<li><p>$place_clean</p><li>";
+	$continent_clean = htmlspecialchars($continent);
+	echo "<li><p>$continent_clean</p><li>";
 }
 ?>
 </ul>
