@@ -1,5 +1,6 @@
 function addClearPoint() {
-	var color = document.getElementById("cp_color").value;
+	var elem = document.getElementById("cp_color");
+	var color = elem.options[elem.selectedIndex].text;
 	var num = parseInt(document.getElementById("cp_quantity").value);
 	var page = "clearPoint.php";
 	
