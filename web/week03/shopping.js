@@ -18,7 +18,7 @@ function addClearPoint() {
 }
 
 function processResponse(response) {
-	var text = response;
+	document.getElementById("response").innerHTML = response;
 }
 
 function addClearPointElite() {
