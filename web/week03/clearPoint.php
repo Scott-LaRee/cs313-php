@@ -32,6 +32,9 @@
 		  $_SESSION["cpRed"] += $num;
 		  $_SESSION["totalItems"] += $num;
 		  break;
+	  default:
+	      echo "default case reached";
+		  break;
   }
   
   /*echo "$num Clear Point pencils added to cart";*/
