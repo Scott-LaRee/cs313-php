@@ -1,4 +1,5 @@
 <?php
+  session_start();
   $color = $num = "";
   
   if($_SERVER["REQUEST_METHOD"] == "POST") {
