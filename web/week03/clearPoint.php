@@ -3,8 +3,8 @@
   $color = $num = "";
   
   if($_SERVER["REQUEST_METHOD"] == "POST") {
-	  $color = validate($_POST["cp_color"]);
-	  $num = (int)validate($_POST["cp_quantity"]);
+	  $color = validate($_GET["cp_color"]);
+	  $num = (int)validate($_GET["cp_quantity"]);
   }
   
   function validate($data) {
