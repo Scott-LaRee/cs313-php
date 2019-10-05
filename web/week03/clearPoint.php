@@ -33,7 +33,7 @@
 		  break;
   }
   
-  echo "$num Clear Point pencils added to cart";
+  /*echo "$num Clear Point pencils added to cart";*/
   echo $_SESSION["cpBlack"];
   echo $_SESSION["cpGreen"];
   echo $_SESSION["cpPink"];
