@@ -16,6 +16,7 @@
   
   switch ($color) {
 	  case "black":
+	      echo "case black";
 	      $_SESSION["cpBlack"] += $num;
 		  $_SESSION["totalItems"] += $num;
 		  break;
