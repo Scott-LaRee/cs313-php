@@ -2,12 +2,14 @@
   session_start();
   $color = $num = "";
   
-  if($_SERVER["REQUEST_METHOD"] == "POST") {
+  if($_SERVER["REQUEST_METHOD"] == "GET") {
 	  $color = validate($_GET["cp_color"]);
 	  $num = (int)validate($_GET["cp_quantity"]);
+	  echo "color is $color, quantitiy is $num";
   }
   
   function validate($data) {
+	  echo "validating"
 	  $data = trim($data);
 	  $data = stripslashes($data);
 	  $data = htmlspecialchars($data);
