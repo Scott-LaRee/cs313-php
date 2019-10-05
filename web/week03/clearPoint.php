@@ -38,5 +38,7 @@
   echo $_SESSION["cpGreen"];
   echo $_SESSION["cpPink"];
   echo $_SESSION["cpRed"];
+  if(!isset($_SESSION["cpBlack"])
+	  echo "session variable set failed";
   
 ?>
