@@ -1,12 +1,12 @@
 <?php
   session_start();
-  /*
+  
   $_SESSION["cpBlack"] = $_SESSION["cpGreen"] = $_SESSION["cpPink"] = 0;
   $_SESSION["cpRed"] = $_SESSION["cpeBlack"] = $_SESSION["cpeBlue"] = 0;
   $_SESSION["cpeGreen"] = $_SESSION["cpeRed"] = $_SESSION["cpeGrey"] = 0;
   $_SESSION["erasers"] = $_SESSION["numItems"] = 0;
-  */
-  $_SESSION["cart"] = [];
+  
+  /*$_SESSION["cart"] = [];*/
     
 ?>
 

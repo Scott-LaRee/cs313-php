@@ -34,4 +34,9 @@
   }
   
   echo "$num Clear Point pencils added to cart";
+  echo $_SESSION["cpBlack"];
+  echo $_SESSION["cpGreen"];
+  echo $_SESSION["cpPink"];
+  echo $_SESSION["cpRed"];
+  
 ?>
