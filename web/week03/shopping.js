@@ -63,5 +63,18 @@ function addErasers() {
 }
 
 function remove(item) {
+	var data = {type: item};
+	var json = JSON.stringify(data);
 	
+	var xml = new XMLHttpRequest();
+    xml.onreadystatechange = function () {
+       if(this.readyState == 4 && this.status == 200) {
+		  response = this.responseText;
+		  processResponse(response);
+	   }
+	};
+	
+	xml.open("POST", "remove.php", true);
+	xml.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	xml.send("data=" + json);
 }
