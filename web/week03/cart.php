@@ -65,7 +65,7 @@
         style='float:left; min-height:100% max-width: 100% '/><br>
 		<label>Quantity: </label> " . $_SESSION["cpBlack"] . "<br>
 		<label>Cost: </label> " . $cost0 . "<br>
-		<input type='checkbox' name='items[]' value='cpBlack'>
+		<input type='checkbox' name='items' value='cpBlack'>
 		<label>Remove Item</label><br>";
   }
   ?>
@@ -78,7 +78,7 @@
         style='float:left; min-height:100% max-width: 100% '/><br>
 		<label>Quantity: </label> " . $_SESSION["cpGreen"] . "<br>
 		<label>Cost: </label> " . $cost1 . "<br>
-		<input type='checkbox' name='items[]' value='cpBlack'>
+		<input type='checkbox' name='items' value='cpBlack'>
 		<label>Remove Item</label><br>";
   }
   ?>
@@ -91,7 +91,7 @@
         style='float:left; min-height:100% max-width: 100% '/><br>
 		<label>Quantity: </label> " . $_SESSION["cpPink"] . "<br>
 		<label>Cost: </label> " . $cost2 . "<br>
-		<input type='checkbox' name='items[]' value='cpBlack'>
+		<input type='checkbox' name='items' value='cpBlack'>
 		<label>Remove Item</label><br>";
   }
   ?>
@@ -105,7 +105,7 @@
         style='float:left; min-height:100% max-width: 100% '/><br>
 		<label>Quantity: </label> " . $_SESSION["cpRed"] . "<br>
 		<label>Cost: </label> " . $cost3 . "<br>
-		<input type='checkbox' name='items[]' value='cpBlack'>
+		<input type='checkbox' name='items' value='cpBlack'>
 		<label>Remove Item</label><br>";
   }
   ?>
@@ -119,7 +119,7 @@
         style='float:left; min-height:100% max-width: 100% '/>
 		<label>Quantity: </label> " . $_SESSION["cpeBlack"] . "<br>
 		<label>Cost: </label> " . $cost4 . "<br>
-		<input type='checkbox' name='items[]' value='cpBlack'>
+		<input type='checkbox' name='items' value='cpBlack'>
 		<label>Remove Item</label><br>";
   }
   ?>
@@ -133,7 +133,7 @@
         style='float:left; min-height:100% max-width: 100% '/>
 		<label>Quantity: </label> " . $_SESSION["cpeBlue"] . "<br>
 		<label>Cost: </label> " . $cost5 . "<br>
-		<input type='checkbox' name='items[]' value='cpBlack'>
+		<input type='checkbox' name='items' value='cpBlack'>
 		<label>Remove Item</label><br>";
   }
   ?>
@@ -147,7 +147,7 @@
         style='float:left; min-height:100% max-width: 100% '/>
 		<label>Quantity: </label> " . $_SESSION["cpeGreen"] . "<br>
 		<label>Cost: </label> " . $cost6 . "<br>
-		<input type='checkbox' name='items[]' value='cpBlack'>
+		<input type='checkbox' name='items' value='cpBlack'>
 		<label>Remove Item</label><br>";
   }
   ?>
@@ -161,7 +161,7 @@
         style='float:left; min-height:100% max-width: 100% '/>
 		<label>Quantity: </label> " . $_SESSION["cpeGrey"] . "<br>
 		<label>Cost: </label> " . $cost7 . "<br>
-		<input type='checkbox' name='items[]' value='cpBlack'>
+		<input type='checkbox' name='items' value='cpBlack'>
 		<label>Remove Item</label><br>";
   }
   ?>
@@ -175,7 +175,7 @@
         style='float:left; min-height:100% max-width: 100% '/>
 		<label>Quantity: </label> " . $_SESSION["cpeRed"] . "<br>
 		<label>Cost: </label> " . $cost8 . "<br>
-		<input type='checkbox' name='items[]' value='cpBlack'>
+		<input type='checkbox' name='items' value='cpBlack'>
 		<label>Remove Item</label><br>";
   }
   ?>
@@ -189,7 +189,7 @@
         style='float:left; min-height:100% max-width: 100% '/>
 		<label>Quantity: </label> " . $_SESSION["erasers"] . "<br>
 		<label>Cost: </label> " . $cost9 . "<br>
-		<input type='checkbox' name='items[]' value='cpBlack'>
+		<input type='checkbox' name='items' value='cpBlack'>
 		<label>Remove Item</label><br>";
   }
 ?>
