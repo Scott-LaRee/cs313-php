@@ -23,7 +23,7 @@ header h1 {
 
 
 #dollar {
-   height: 200px;
+   height: 100px;
    margin: 5px;
    padding: 5px;
    display: inline-block;
@@ -42,7 +42,7 @@ header h1 {
 
 
 #menuBar {
-    background-color: rgb(63,72,204);
+    background-color: rgb(134, 200, 247);
     overflow: hidden;
     border: none;
 	margin:10px;

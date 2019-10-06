@@ -35,7 +35,7 @@
  <div id="head">
    <header>
    <div id="pageHead">
-    <h1>Shopping Cart</h1>
+    <h1>Browse</h1>
    </div>
    <div id="menuBar">
     <ul id="menuBarList">
