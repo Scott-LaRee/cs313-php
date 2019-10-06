@@ -1,6 +1,7 @@
 <?php
   session_start();
-  $color = $num = "";
+  $color = "";
+  $num = 0;
   $data = json_decode($_POST["data"], false);
   
   if($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -10,7 +11,6 @@
   }
   
   function validate($data) {
-	  echo "validating";
 	  $data = trim($data);
 	  $data = stripslashes($data);
 	  $data = htmlspecialchars($data);
@@ -19,7 +19,6 @@
   
   switch ($color) {
 	  case "black":
-	      echo "case black";
 	      $_SESSION["cpBlack"] += $num;
 		  $_SESSION["totalItems"] += $num;
 		  break;
