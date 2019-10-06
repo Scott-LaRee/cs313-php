@@ -1,7 +1,7 @@
 <?php
   session_start();
   $num = 0;
-  $data = json_decode($_POST["data"], false)
+  $data = json_decode($_POST["data"], false);
   
   if($_SERVER["REQUEST_METHOD"] == "POST") {
 	  $num = (int)validate($data->qty);
