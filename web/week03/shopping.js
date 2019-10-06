@@ -3,7 +3,7 @@ function addClearPoint() {
 	var color = elem.options[elem.selectedIndex].value;
 	var num = parseInt(document.getElementById("cp_quantity").value);
 	var page = "clearPoint.php";
-	var data = [color,num];
+	var data = {clr: color , qty: num];
 	var json = JSON.stringify(data);
 	
 	var xml = new XMLHttpRequest();

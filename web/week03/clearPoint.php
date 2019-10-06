@@ -4,8 +4,8 @@
   $data = json_decode($_POST["data"], false);
   
   if($_SERVER["REQUEST_METHOD"] == "POST") {
-	  $color = validate($data->0);
-	  $num = (int)validate($data->1);
+	  $color = validate($data->clr);
+	  $num = (int)validate($data->qty);
 	  echo "color is $color, quantitiy is $num";
   }
   
