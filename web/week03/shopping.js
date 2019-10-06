@@ -46,6 +46,8 @@ function addClearPointElite() {
 function addErasers() {
 	var num = parseInt(document.getElementById("eraser_quantity").value);
 	var page = "erasers.php";
+	var data = {qty: num};
+	var json = JSON.stringify(data);
 	
 	var xml = new XMLHttpRequest();
     xml.onreadystatechange = function () {
@@ -57,7 +59,7 @@ function addErasers() {
 	
 	xml.open("POST", page, true);
 	xml.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-	xml.send("data=" + num);
+	xml.send("data=" + json);
 }
 
 function remove(item) {
