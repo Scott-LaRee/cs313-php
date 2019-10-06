@@ -2,7 +2,7 @@ function addClearPoint() {
 	var elem = document.getElementById("cp_color");
 	var color = elem.options[elem.selectedIndex].value;
 	var num = parseInt(document.getElementById("cp_quantity").value);
-	var page = "clearPoint.php";
+	
 	var data = {clr: color , qty: num};
 	var json = JSON.stringify(data);
 	
@@ -27,7 +27,8 @@ function processResponse(response) {
 function addClearPointElite() {
 	var color = document.getElementById("cpe_color").value;
 	var num = parseInt(document.getElementById("cpe_quantity").value);
-	var page = "clearPointElite.php";
+	var data = {clr: color, qty: num};
+	var json = JSON.stringify(data);
 	
 	var xml = new XMLHttpRequest();
     xml.onreadystatechange = function () {
@@ -37,8 +38,9 @@ function addClearPointElite() {
 	   }
 	};
 	
-	xml.open("GET", page, true);
-	xml.send(color,num);
+	xml.open("Post", "clearPointElite.php", true);
+	xml.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	xml.send("data=" + json);
 }
 
 function addErasers() {
@@ -53,8 +55,9 @@ function addErasers() {
 	   }
 	};
 	
-	xml.open("GET", page, true);
-	xml.send(num);
+	xml.open("POST", page, true);
+	xml.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	xml.send("data=" + num);
 }
 
 function remove(item) {
