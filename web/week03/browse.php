@@ -1,13 +1,27 @@
 <?php
   session_start();
-  
-  $_SESSION["cpBlack"] = $_SESSION["cpGreen"] = $_SESSION["cpPink"] = 0;
-  $_SESSION["cpRed"] = $_SESSION["cpeBlack"] = $_SESSION["cpeBlue"] = 0;
-  $_SESSION["cpeGreen"] = $_SESSION["cpeRed"] = $_SESSION["cpeGrey"] = 0;
-  $_SESSION["erasers"] = $_SESSION["numItems"] = 0;
-  
-  /*$_SESSION["cart"] = [];*/
-    
+  if(!isset($_SESSION["cpBlack"]))
+	  $_SESSION["cpBlack"] = 0;
+  if(!isset($_SESSION["cpGreen"]))
+	  $_SESSION["cpGreen"] = 0;
+  if(!isset($_SESSION["cpPink"]))
+	  $_SESSION["cpPink"] = 0;
+  if(!isset($_SESSION["cpRed"]))
+	  $_SESSION["cpRed"] = 0;
+  if(!isset($_SESSION["cpeBlack"]))
+	  $_SESSION["cpeBlack"] = 0;
+  if(!isset($_SESSION["cpeBlue"]))
+	  $_SESSION["cpeBlue"] = 0;
+  if(!isset($_SESSION["cpeGreen"]))
+	  $_SESSION["cpeGreen"] = 0;
+  if(!isset($_SESSION["cpeGrey"]))
+	  $_SESSION["cpeRed"] = 0;
+  if(!isset($_SESSION["cpeRed"]))
+	  $_SESSION["cpeGrey"] = 0;
+  if(!isset($_SESSION["erasers"]))
+	  $_SESSION["erasers"] = 0;
+  if(!isset($_SESSION["totalItems"]))
+	  $_SESSION["totalItems"] = 0; 
 ?>
 
 <!DOCTYPE HTML>
@@ -17,6 +31,7 @@
 <title>Browse</title>
 </head>
 <body>
+<div id="page">
  <div id="head">
    <header>
    <div id="pageHead">
@@ -40,5 +55,6 @@
   <tr><td><img src="eraser.jpg" id="erasers" alt="erasers" 
         style='float:left; min-height:100% max-width: 100% '/></td>
       <td><a href="erasers.html">Paper Mate Eraser Refills 2 ct.</a></td></tr>
+	  </div>
 </body>
 </html>
