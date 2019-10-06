@@ -17,7 +17,19 @@
 <title>Browse</title>
 </head>
 <body>
- <!--include a header.php-->
+ <div id="head">
+   <header>
+   <div id="pageHead">
+    <h1>Shopping Cart</h1>
+   </div>
+   <div id="menuBar">
+    <ul id="menuBarList">
+     <li class="menuBarItem"><a href="browse.php">BROWSE</a></li>
+     <li class="menuBarItem"><a href="cart.php">VIEW CART</a></li>
+    </ul>
+   </div>
+   </header>
+ </div>
  <table>
   <tr><td><img src="PaperMateClearPoint_black.jpg" id="clearPoint" alt="Paper Mate Clear Point" 
         style='float:left; min-height:100% max-width: 100% '/></td>
