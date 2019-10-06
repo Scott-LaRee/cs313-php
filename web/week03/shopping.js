@@ -89,6 +89,7 @@ function removeItem(item) {
 }
 
 function removeDiv(item) {
-	var div = document.getElementById(item + "Div");
+	var name = item + "Div";
+	var div = document.getElementById(name);
 	div.parentNode.removeChild(div);
 }
