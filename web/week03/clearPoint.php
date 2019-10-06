@@ -40,10 +40,10 @@
   }
   
   /*echo "$num Clear Point pencils added to cart";*/
-  echo $_SESSION["cpBlack"];
-  echo $_SESSION["cpGreen"];
-  echo $_SESSION["cpPink"];
-  echo $_SESSION["cpRed"];
+  echo "ordering " . $_SESSION["cpBlack"] . "black pencils";
+  echo "ordering " . $_SESSION["cpGreen"] . "green pencils";
+  echo "ordering " . $_SESSION["cpPink"] . "pink pencils";
+  echo "ordering " . $_SESSION["cpRed"] . "red pencils";
   if(!isset($_SESSION["cpBlack"]))
 	  echo "session variable set failed";
   
