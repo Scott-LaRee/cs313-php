@@ -1,5 +1,6 @@
 <?php
   session_start();
+  
   $num = 0;
   $type = "";
   $data = json_decode($_POST["data"], false);
@@ -7,6 +8,7 @@
   if($_SERVER["REQUEST_METHOD"] == "POST") {
 	  $type= validate($data->type);
   }
+  echo "type = $type";
   
   function validate($data) {
 	  echo "validating $data";
