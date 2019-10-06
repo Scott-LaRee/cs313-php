@@ -1,10 +1,11 @@
 <?php
   session_start();
   $color = $num = "";
+  $data = json_decode($_POST["data"], false);
   
-  if($_SERVER["REQUEST_METHOD"] == "GET") {
-	  $color = validate($_REQUEST["cp_color"]);
-	  $num = (int)validate($_REQUEST["cp_quantity"]);
+  if($_SERVER["REQUEST_METHOD"] == "POST") {
+	  $color = validate($data->0);
+	  $num = (int)validate($data->1);
 	  echo "color is $color, quantitiy is $num";
   }
   

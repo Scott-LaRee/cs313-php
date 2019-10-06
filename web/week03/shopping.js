@@ -3,6 +3,8 @@ function addClearPoint() {
 	var color = elem.options[elem.selectedIndex].value;
 	var num = parseInt(document.getElementById("cp_quantity").value);
 	var page = "clearPoint.php";
+	var data = [color,num];
+	var json = JSON.strignify(data);
 	
 	var xml = new XMLHttpRequest();
     xml.onreadystatechange = function () {
@@ -12,9 +14,9 @@ function addClearPoint() {
 	   }
 	};
 	
-	xml.open("GET", "clearPoint.php?cp_color=" + color + "?cp_quantity=" +
-	         num, true);
-	xml.send(color,num);
+	xml.open("POST", "clearPoint.php", true);
+	xml.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	xml.send("data=" + json);
 	
 }
 
