@@ -9,7 +9,7 @@
   }
   
   function validate($data) {
-	  echo "validating"
+	  echo "validating";
 	  $data = trim($data);
 	  $data = stripslashes($data);
 	  $data = htmlspecialchars($data);
