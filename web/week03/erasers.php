@@ -22,7 +22,7 @@
 	  echo $_SESSION["erasers"] . " currently in cart<br>";
   else
 	  echo "no erasers in cart<br>";
-  
+  /*
   echo "cpBlack = " . $_SESSION["cpBlack"] . "<br>";
   echo "cpGreen = " . $_SESSION["cpGreen"] . "<br>";
   echo "cpPink = " . $_SESSION["cpPink"] . "<br>";
@@ -33,6 +33,6 @@
   echo "cpeGrey = " . $_SESSION["cpeGrey"] . "<br>";
   echo "cpeRed = " . $_SESSION["cpeRed"] . "<br>";
   echo "erasers = " . $_SESSION["erasers"] . "<br>";
-  
+  */
   /*echo "$num erasers added to cart";*/
 ?>

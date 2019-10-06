@@ -45,7 +45,7 @@
   $cost9 = 5 * $_SESSION["erasers"];
   $totalCost = $cost0 + $cost1 + $cost2 + $cost3 + $cost4 + 
                $cost5 + $cost6 + $cost7 + $cost8 + $cost9;
-  
+  /*
   echo "cpBlack = " . $_SESSION["cpBlack"] . "<br>";
   echo "cpGreen = " . $_SESSION["cpGreen"] . "<br>";
   echo "cpPink = " . $_SESSION["cpPink"] . "<br>";
@@ -55,7 +55,7 @@
   echo "cpeGreen = " . $_SESSION["cpeGreen"] . "<br>";
   echo "cpeGrey = " . $_SESSION["cpeGrey"] . "<br>";
   echo "cpeRed = " . $_SESSION["cpeRed"] . "<br>";
-  echo "erasers = " . $_SESSION["erasers"] . "<br>";
+  echo "erasers = " . $_SESSION["erasers"] . "<br>";*/
   ?>
   <div id="cpBlackDiv">
   <?php

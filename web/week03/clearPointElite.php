@@ -47,7 +47,7 @@
 	      echo "no pencils added<br>";
 		  break;
   }
-  
+  /*
   echo "$num Clear Point Elite pencils added to cart<br>";
   echo "cpBlack = " . $_SESSION["cpBlack"] . "<br>";
   echo "cpGreen = " . $_SESSION["cpGreen"] . "<br>";
@@ -58,5 +58,5 @@
   echo "cpeGreen = " . $_SESSION["cpeGreen"] . "<br>";
   echo "cpeGrey = " . $_SESSION["cpeGrey"] . "<br>";
   echo "cpeRed = " . $_SESSION["cpeRed"] . "<br>";
-  echo "erasers = " . $_SESSION["erasers"] . "<br>";
+  echo "erasers = " . $_SESSION["erasers"] . "<br>";*/
 ?>

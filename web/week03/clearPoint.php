@@ -50,6 +50,7 @@
   echo "ordering " . $_SESSION["cpRed"] . "red pencils";
   if(!isset($_SESSION["cpBlack"]))
 	  echo "session variable set failed";*/
+  /*
   echo "cpBlack = " . $_SESSION["cpBlack"] . "<br>";
   echo "cpGreen = " . $_SESSION["cpGreen"] . "<br>";
   echo "cpPink = " . $_SESSION["cpPink"] . "<br>";
@@ -59,5 +60,5 @@
   echo "cpeGreen = " . $_SESSION["cpeGreen"] . "<br>";
   echo "cpeGrey = " . $_SESSION["cpeGrey"] . "<br>";
   echo "cpeRed = " . $_SESSION["cpeRed"] . "<br>";
-  echo "erasers = " . $_SESSION["erasers"] . "<br>";
+  echo "erasers = " . $_SESSION["erasers"] . "<br>";*/
 ?>
