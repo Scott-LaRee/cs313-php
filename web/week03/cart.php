@@ -175,8 +175,8 @@
   <?php
   if(isset($_SESSION["erasers"]) && $_SESSION["erasers"] > 0) {
 	  echo "<div>
-	  <h1>Paper Mate Eraser Refills 2 ct.</h1>
-	  <img src='eraser.jpg' class='smallPic' alt='Paper Mate Eraser Refills' 
+	  <h1>Paper Mate Eraser Refills 2 ct. & 0.5 mm pencil lead</h1>
+	  <img src='erasers.jpg' class='smallPic' alt='Paper Mate Eraser Refills' 
         style='float:left; min-height:100% max-width: 100% '/>
 		<label>Quantity: </label> " . $_SESSION["erasers"] . "<br>
 		<label>Cost: </label> " . $cost9 . "<br>
@@ -191,5 +191,6 @@
   </form>
   <span id="response"></span> 
   </div>
+  <script type="text/javascript" src="shopping.js" charset="UTF-8"></script> 
 </body>
 </html>
