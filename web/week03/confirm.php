@@ -19,11 +19,17 @@
 <head>
 <meta charset="utf-8">
 <title>Purchase Confirmation</title>
+<link id="styleOfPage" type="text/css" rel="StyleSheet" 
+	href="shopping.css" />
 </head>
 <body>
 <div id="page">
   <div id="head">
    <header>
+    <div id="dollarPic">
+     <img src="dollar_sign.png" id="dollar" alt="Dollar Sign image" 
+        style='float:left; min-height:100% max-width: 100% '/>
+    </div>
    <div id="pageHead">
     <h1>Purchase Confirmation</h1>
    </div>
