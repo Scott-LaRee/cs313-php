@@ -4,9 +4,11 @@
   
   if($_SERVER["REQUEST_METHOD"] == "POST") {
 	  $num = (int)validate($data);
+	  echo "num = $num";
   }
   
   function validate($data) {
+	  echo "validating";
 	  $data = trim($data);
 	  $data = stripslashes($data);
 	  $data = htmlspecialchars($data);
