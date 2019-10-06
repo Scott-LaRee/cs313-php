@@ -3,8 +3,8 @@
   $color = $num = "";
   
   if($_SERVER["REQUEST_METHOD"] == "GET") {
-	  $color = validate($_GET["cp_color"]);
-	  $num = (int)validate($_GET["cp_quantity"]);
+	  $color = validate($_REQUEST["cp_color"]);
+	  $num = (int)validate($_REQUEST["cp_quantity"]);
 	  echo "color is $color, quantitiy is $num";
   }
   
