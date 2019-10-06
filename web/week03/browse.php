@@ -53,13 +53,13 @@
  </div>
  <table>
   <tr><td><img src="PaperMateClearPoint_black.jpg" id="clearPoint" alt="Paper Mate Clear Point" 
-        style='float:left; min-height:100% max-width: 100% '/></td>
+        class="smallPic" style='float:left; min-height:100% max-width: 100% '/></td>
       <td><a href="clearPoint.html">Paper Mate Clear Point Mechanical Pencil 0.5</a></td></tr>
   <tr><td><img src="PaperMateEliteCLearPoint_black.jpg" id="elite" alt="Paper Mate Clear Point Elite" 
-        style='float:left; min-height:100% max-width: 100% '/></td>
+        class="smallPic" style='float:left; min-height:100% max-width: 100% '/></td>
       <td><a href="clearPointElite.html">Paper Mate Clear Point Elite Mechanical Pencil 0.5</a></td></tr>
   <tr><td><img src="eraser.jpg" id="erasers" alt="erasers" 
-        style='float:left; min-height:100% max-width: 100% '/></td>
+        class="smallPic" style='float:left; min-height:100% max-width: 100% '/></td>
       <td><a href="erasers.html">Paper Mate Eraser Refills 2 ct.</a></td></tr>
 	  </div>
 </body>

@@ -84,3 +84,9 @@ header h1 {
 	border: solid;
 	border-color: white;
 }
+
+.smallPic {
+    height: 75px;
+    margin: 5px;
+    padding: 5px;
+}
