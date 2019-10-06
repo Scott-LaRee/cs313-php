@@ -12,7 +12,8 @@ function addClearPoint() {
 	   }
 	};
 	
-	xml.open("GET", page, true);
+	xml.open("GET", "clearPoint.php?cp_color=" + color + "?cp_quantity=" +
+	         num, true);
 	xml.send(color,num);
 	
 }
