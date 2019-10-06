@@ -62,6 +62,12 @@ function addErasers() {
 	xml.send("data=" + json);
 }
 
+function remove() {
+	var boxes = document.getElementsByName("items");
+	
+	for (var i = 0; i < form.elements.length;
+}
+
 function removeItem(item) {
 	var data = {type: item};
 	var json = JSON.stringify(data);
