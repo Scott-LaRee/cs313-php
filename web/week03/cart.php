@@ -187,7 +187,7 @@
     <p>Total Items: <?php echo $_SESSION["totalItems"];?></p> <br>
 	<p>Total Cost: <?php echo $totalCost; ?></p><br>
   </div>
-  <button type="submit" value="Checkout">
+  <input type="submit" value="Checkout">
   </form>
   <span id="response"></span> 
   </div>
