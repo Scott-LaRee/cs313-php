@@ -4,7 +4,7 @@ function addClearPoint() {
 	var num = parseInt(document.getElementById("cp_quantity").value);
 	var page = "clearPoint.php";
 	var data = [color,num];
-	var json = JSON.strignify(data);
+	var json = JSON.stringify(data);
 	
 	var xml = new XMLHttpRequest();
     xml.onreadystatechange = function () {
