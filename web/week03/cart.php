@@ -45,7 +45,7 @@
 		<label>Quantity: </label> " . $_SESSION["cpBlack"] . "<br>
 		<label>Cost: </label> " . $cost0 . "<br>
 		<button type='button' onclick='removeItem('cpBlack')'>Remove</button>
-		</div>"
+		</div>";
   }
   
   if(isset($_SESSION["cpGreen"]) && $_SESSION["cpGreen"] > 0) {
@@ -56,7 +56,7 @@
 		<label>Quantity: </label> " . $_SESSION["cpGreen"] . "<br>
 		<label>Cost: </label> " . $cost1 . "<br>
 		<button type='button' onclick='removeItem('cpGreen')'>Remove</button>
-		</div>"
+		</div>";
   }
   
   if(isset($_SESSION["cpPink"]) && $_SESSION["cpPink"] > 0) {
@@ -67,7 +67,7 @@
 		<label>Quantity: </label> " . $_SESSION["cpPink"] . "<br>
 		<label>Cost: </label> " . $cost2 . "<br>
 		<button type='button' onclick='removeItem('cpPink')'>Remove</button>
-		</div>"
+		</div>";
   }
   
   if(isset($_SESSION["cpRed"]) && $_SESSION["cpRed"] > 0) {
@@ -78,7 +78,7 @@
 		<label>Quantity: </label> " . $_SESSION["cpRed"] . "<br>
 		<label>Cost: </label> " . $cost3 . "<br>
 		<button type='button' onclick='removeItem('cpRed')'>Remove</button>
-		</div>"
+		</div>";
   }
   
   if(isset($_SESSION["cpeBlack"]) && $_SESSION["cpeBlack"] > 0) {
@@ -89,7 +89,7 @@
 		<label>Quantity: </label> " . $_SESSION["cpeBlack"] . "<br>
 		<label>Cost: </label> " . $cost4 . "<br>
 		<button type='button' onclick='removeItem('cpeBlack')'>Remove</button>
-	    </div>"
+	    </div>";
   }
   
   if(isset($_SESSION["cpeBlue"]) && $_SESSION["cpeBlue"] > 0) {
@@ -100,7 +100,7 @@
 		<label>Quantity: </label> " . $_SESSION["cpeBlue"] . "<br>
 		<label>Cost: </label> " . $cost5 . "<br>
 		<button type='button' onclick='removeItem('cpeBlue')'>Remove</button>
-		</div>"
+		</div>";
   }
   if(isset($_SESSION["cpeGreen"]) && $_SESSION["cpeGreen"] > 0) {
 	  echo "<div>
@@ -110,7 +110,7 @@
 		<label>Quantity: </label> " . $_SESSION["cpeGreen"] . "<br>
 		<label>Cost: </label> " . $cost6 . "<br>
 		<button type='button' onclick='removeItem('cpeGreen')'>Remove</button>
-		</div>"
+		</div>";
   }
   
   if(isset($_SESSION["cpeGrey"]) && $_SESSION["cpeGrey"] > 0) {
@@ -121,7 +121,7 @@
 		<label>Quantity: </label> " . $_SESSION["cpeGrey"] . "<br>
 		<label>Cost: </label> " . $cost7 . "<br>
 		<button type='button' onclick='removeItem('cpeGreen')'>Remove</button>
-		</div>"
+		</div>";
   }
   
   if(isset($_SESSION["cpeRed"]) && $_SESSION["cpeRed"] > 0) {
@@ -132,7 +132,7 @@
 		<label>Quantity: </label> " . $_SESSION["cpeRed"] . "<br>
 		<label>Cost: </label> " . $cost8 . "<br>
 		<button type='button' onclick='removeItem('cpeRed')'>Remove</button>
-		</div>"
+		</div>";
   }
   
   if(isset($_SESSION["erasers"]) && $_SESSION["erasers"] > 0) {
@@ -143,12 +143,12 @@
 		<label>Quantity: </label> " . $_SESSION["erasers"] . "<br>
 		<label>Cost: </label> " . $cost9 . "<br>
 		<button type='button' onclick='removeItem('erasers')'>Remove</button>
-		</div>"
+		</div>";
   }
 ?>
   <div>
     <p>Total Items: <?php echo $_SESSION["totalItems"];?></p> <br>
-	<p>Total Cost: <?php echo $totalCost ?></p><br>
+	<p>Total Cost: <?php echo $totalCost; ?></p><br>
   </div>
   <button type="submit" value="Checkout">
   </form>
