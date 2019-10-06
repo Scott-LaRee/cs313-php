@@ -94,4 +94,5 @@ function removeDiv(item) {
 	var name = item + "Div";
 	var div = document.getElementById(name);
 	div.parentNode.removeChild(div);
+	window.location.reload(true);
 }
