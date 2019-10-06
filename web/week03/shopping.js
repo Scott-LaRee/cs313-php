@@ -64,8 +64,8 @@ function addErasers() {
 
 function remove() {
 	var boxes = document.getElementsByName("items");
-	
-	for (var i = 0; i < form.elements.length;
+	var test = 0;
+	//for (var i = 0; i < form.elements.length; i++)
 }
 
 function removeItem(item) {
