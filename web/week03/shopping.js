@@ -96,3 +96,23 @@ function removeDiv(item) {
 	div.parentNode.removeChild(div);
 	window.location.reload(true);
 }
+
+function changeCpImage() {
+	var elem = document.getElementById("cp_color");
+	var color = elem.options[elem.selectedIndex].value;
+	var imgElem = document.getElementById("clearPoint");
+	//var color = document.getElementById("cp_color").options[elem.selectedIndex].value;
+	var newImage = "PaperMateClearPoint_" + color + ".jpg";
+	
+	imgElem.src= newImage;
+}
+
+function changeCpeImage() {
+	var elem = document.getElementById("cpe_color");
+	var color = elem.options[elem.selectedIndex].value;
+	var imgElem = document.getElementById("elite");
+	//var color = document.getElementById("cpe_color").options[elem.selectedIndex].value;
+	var newImage = "PaperMateEliteCLearPoint_" + color + ".jpg";
+	
+	imgElem.src= newImage;
+}
