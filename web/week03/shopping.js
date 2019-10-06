@@ -66,8 +66,10 @@ function remove() {
 	var boxes = document.getElementsByName("items");
 	
 	for (var iBox = 0; iBox < boxes.length; iBox++) {
-		removeItem(boxes[iBox].value);
-		removeDiv(boxes[iBox].value);
+		if(boxes[iBox].checked) {
+			removeItem(boxes[iBox].value);
+			removeDiv(boxes[iBox].value);
+		}
 	}
 }
 
