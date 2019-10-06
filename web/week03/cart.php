@@ -57,7 +57,7 @@
   echo "cpeRed = " . $_SESSION["cpeRed"] . "<br>";
   echo "erasers = " . $_SESSION["erasers"] . "<br>";
   ?>
-  <div>
+  <div id="cpBlackDiv">
   <?php
   if(isset($_SESSION["cpBlack"]) && $_SESSION["cpBlack"] > 0) {
 	  echo "<h3>Black ClearPoint 0.5 mm Mechanical Pencil</h3> 
@@ -70,7 +70,7 @@
   }
   ?>
   </div>
-  <div>
+  <div id="cpGreenDiv">
   <?php
   if(isset($_SESSION["cpGreen"]) && $_SESSION["cpGreen"] > 0) {
 	  echo "<h3>Green ClearPoint 0.5 mm Mechanical Pencil</h3>
@@ -78,12 +78,12 @@
         style='float:left; min-height:100% max-width: 100% '/><br>
 		<label>Quantity: </label> " . $_SESSION["cpGreen"] . "<br>
 		<label>Cost: </label> " . $cost1 . "<br>
-		<input type='checkbox' name='items' value='cpBlack'>
+		<input type='checkbox' name='items' value='cpGreen'>
 		<label>Remove Item</label><br>";
   }
   ?>
   </div>
-  <div>
+  <div id="cpPinkDiv">
   <?php
   if(isset($_SESSION["cpPink"]) && $_SESSION["cpPink"] > 0) {
 	  echo "<h3>Pink ClearPoint 0.5 mm Mechanical Pencil</h3>
@@ -91,12 +91,12 @@
         style='float:left; min-height:100% max-width: 100% '/><br>
 		<label>Quantity: </label> " . $_SESSION["cpPink"] . "<br>
 		<label>Cost: </label> " . $cost2 . "<br>
-		<input type='checkbox' name='items' value='cpBlack'>
+		<input type='checkbox' name='items' value='cpPink'>
 		<label>Remove Item</label><br>";
   }
   ?>
   </div>
-  <div>
+  <div id="cpRedDiv">
   <?php
   if(isset($_SESSION["cpRed"]) && $_SESSION["cpRed"] > 0) {
 	  echo "<div>
@@ -105,12 +105,12 @@
         style='float:left; min-height:100% max-width: 100% '/><br>
 		<label>Quantity: </label> " . $_SESSION["cpRed"] . "<br>
 		<label>Cost: </label> " . $cost3 . "<br>
-		<input type='checkbox' name='items' value='cpBlack'>
+		<input type='checkbox' name='items' value='cpRed'>
 		<label>Remove Item</label><br>";
   }
   ?>
   </div>
-  <div>
+  <div id="cpeBlackDiv">
   <?php
   if(isset($_SESSION["cpeBlack"]) && $_SESSION["cpeBlack"] > 0) {
 	  echo " <div> 
@@ -119,12 +119,12 @@
         style='float:left; min-height:100% max-width: 100% '/>
 		<label>Quantity: </label> " . $_SESSION["cpeBlack"] . "<br>
 		<label>Cost: </label> " . $cost4 . "<br>
-		<input type='checkbox' name='items' value='cpBlack'>
+		<input type='checkbox' name='items' value='cpeBlack'>
 		<label>Remove Item</label><br>";
   }
   ?>
   </div>
-  <div>
+  <div id="cpeBlueDiv">
   <?php
   if(isset($_SESSION["cpeBlue"]) && $_SESSION["cpeBlue"] > 0) {
 	  echo "<div>
@@ -133,12 +133,12 @@
         style='float:left; min-height:100% max-width: 100% '/>
 		<label>Quantity: </label> " . $_SESSION["cpeBlue"] . "<br>
 		<label>Cost: </label> " . $cost5 . "<br>
-		<input type='checkbox' name='items' value='cpBlack'>
+		<input type='checkbox' name='items' value='cpeBlue'>
 		<label>Remove Item</label><br>";
   }
   ?>
   </div>
-  <div>
+  <div id="cpeGreenDiv">
   <?php
   if(isset($_SESSION["cpeGreen"]) && $_SESSION["cpeGreen"] > 0) {
 	  echo "<div>
@@ -147,12 +147,12 @@
         style='float:left; min-height:100% max-width: 100% '/>
 		<label>Quantity: </label> " . $_SESSION["cpeGreen"] . "<br>
 		<label>Cost: </label> " . $cost6 . "<br>
-		<input type='checkbox' name='items' value='cpBlack'>
+		<input type='checkbox' name='items' value='cpeGreen'>
 		<label>Remove Item</label><br>";
   }
   ?>
   </div>
-  <div>
+  <div id="cpeGreyDiv">
   <?php
   if(isset($_SESSION["cpeGrey"]) && $_SESSION["cpeGrey"] > 0) {
 	  echo "<div>
@@ -161,12 +161,12 @@
         style='float:left; min-height:100% max-width: 100% '/>
 		<label>Quantity: </label> " . $_SESSION["cpeGrey"] . "<br>
 		<label>Cost: </label> " . $cost7 . "<br>
-		<input type='checkbox' name='items' value='cpBlack'>
+		<input type='checkbox' name='items' value='cpeGrey'>
 		<label>Remove Item</label><br>";
   }
   ?>
   </div>
-  <div>
+  <div id="cpeRedDiv">
   <?php
   if(isset($_SESSION["cpeRed"]) && $_SESSION["cpeRed"] > 0) {
 	  echo "<div>
@@ -175,12 +175,12 @@
         style='float:left; min-height:100% max-width: 100% '/>
 		<label>Quantity: </label> " . $_SESSION["cpeRed"] . "<br>
 		<label>Cost: </label> " . $cost8 . "<br>
-		<input type='checkbox' name='items' value='cpBlack'>
+		<input type='checkbox' name='items' value='cpeRed'>
 		<label>Remove Item</label><br>";
   }
   ?>
   </div>
-  <div>
+  <div id="erasersDiv">
   <?php
   if(isset($_SESSION["erasers"]) && $_SESSION["erasers"] > 0) {
 	  echo "<div>
@@ -189,7 +189,7 @@
         style='float:left; min-height:100% max-width: 100% '/>
 		<label>Quantity: </label> " . $_SESSION["erasers"] . "<br>
 		<label>Cost: </label> " . $cost9 . "<br>
-		<input type='checkbox' name='items' value='cpBlack'>
+		<input type='checkbox' name='items' value='erasers'>
 		<label>Remove Item</label><br>";
   }
 ?>
