@@ -80,4 +80,15 @@
 			echo "red ClearPoint Elite pencil removed from cart.";
 			break;
 	}
+	
+  echo "cpBlack = " . $_SESSION["cpBlack"] . "<br>";
+  echo "cpGreen = " . $_SESSION["cpGreen"] . "<br>";
+  echo "cpPink = " . $_SESSION["cpPink"] . "<br>";
+  echo "cpRed = " . $_SESSION["cpRed"] . "<br>";
+  echo "cpeBlack = " . $_SESSION["cpeBlack"] . "<br>";
+  echo "cpeBlue = " . $_SESSION["cpeBlue"] . "<br>";
+  echo "cpeGreen = " . $_SESSION["cpeGreen"] . "<br>";
+  echo "cpeGrey = " . $_SESSION["cpeGrey"] . "<br>";
+  echo "cpeRed = " . $_SESSION["cpeRed"] . "<br>";
+  echo "erasers = " . $_SESSION["erasers"] . "<br>";
 ?>
