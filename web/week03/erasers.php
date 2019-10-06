@@ -18,7 +18,7 @@
   $_SESSION["erasers"] += $num;
   $_SESSION["totalItems"] += $num;
   
-  if(isset($_SESSION["cpBlack"]))
+  if(isset($_SESSION["erasers"]))
 	  echo $_SESSION["erasers"] . " currently in cart";
   else
 	  echo "no erasers in cart";
