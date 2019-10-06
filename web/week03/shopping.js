@@ -67,6 +67,7 @@ function remove() {
 	
 	for (var iBox = 0; iBox < boxes.length; iBox++) {
 		removeItem(boxes[iBox].value);
+		removeDiv(boxes[iBox].value);
 	}
 }
 
@@ -85,4 +86,9 @@ function removeItem(item) {
 	xml.open("POST", "remove.php", true);
 	xml.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 	xml.send("data=" + json);
+}
+
+function removeDiv(item) {
+	var div = document.getElementById(item + "Div");
+	div.parentNode.removeChild(div);
 }
