@@ -62,7 +62,7 @@ function addErasers() {
 	xml.send("data=" + json);
 }
 
-function remove(item) {
+function removeItem(item) {
 	var data = {type: item};
 	var json = JSON.stringify(data);
 	

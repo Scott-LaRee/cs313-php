@@ -60,7 +60,7 @@
   <div>
   <?php
   if(isset($_SESSION["cpBlack"]) && $_SESSION["cpBlack"] > 0) {
-	  echo "<h1>Black ClearPoint 0.5 mm Mechanical Pencil</h1> 
+	  echo "<h3>Black ClearPoint 0.5 mm Mechanical Pencil</h3> 
 	  <img src='PaperMateClearPoint_black.jpg' class='smallPic' alt='Paper Mate Clear Point' 
         style='float:left; min-height:100% max-width: 100% '/><br>
 		<label>Quantity: </label> " . $_SESSION["cpBlack"] . "<br>
@@ -72,7 +72,7 @@
   <div>
   <?php
   if(isset($_SESSION["cpGreen"]) && $_SESSION["cpGreen"] > 0) {
-	  echo "<h1>Green ClearPoint 0.5 mm Mechanical Pencil</h1>
+	  echo "<h3>Green ClearPoint 0.5 mm Mechanical Pencil</h3>
 	  <img src='PaperMateClearPoint_green.jpg' class='smallPic' alt='Paper Mate Clear Point' 
         style='float:left; min-height:100% max-width: 100% '/><br>
 		<label>Quantity: </label> " . $_SESSION["cpGreen"] . "<br>
@@ -84,7 +84,7 @@
   <div>
   <?php
   if(isset($_SESSION["cpPink"]) && $_SESSION["cpPink"] > 0) {
-	  echo "<h1>Pink ClearPoint 0.5 mm Mechanical Pencil</h1>
+	  echo "<h3>Pink ClearPoint 0.5 mm Mechanical Pencil</h3>
 	  <img src='PaperMateClearPoint_pink.jpg' class='smallPic' alt='Paper Mate Clear Point' 
         style='float:left; min-height:100% max-width: 100% '/><br>
 		<label>Quantity: </label> " . $_SESSION["cpPink"] . "<br>
@@ -97,7 +97,7 @@
   <?php
   if(isset($_SESSION["cpRed"]) && $_SESSION["cpRed"] > 0) {
 	  echo "<div>
-	  <h1>Red ClearPoint 0.5 mm Mechanical Pencil</h1>
+	  <h3>Red ClearPoint 0.5 mm Mechanical Pencil</h3>
 	  <img src='PaperMateClearPoint_red.jpg' class='smallPic' alt='Paper Mate Clear Point' 
         style='float:left; min-height:100% max-width: 100% '/><br>
 		<label>Quantity: </label> " . $_SESSION["cpRed"] . "<br>
@@ -110,7 +110,7 @@
   <?php
   if(isset($_SESSION["cpeBlack"]) && $_SESSION["cpeBlack"] > 0) {
 	  echo " <div> 
-	  <h1>Black ClearPoint Elite 0.5 mm Mechanical Pencil</h1>
+	  <h3>Black ClearPoint Elite 0.5 mm Mechanical Pencil</h3>
 	    <img src='PaperMateEliteCLearPoint_black.jpg' class='smallPic' alt='Paper Mate Clear Point Elite' 
         style='float:left; min-height:100% max-width: 100% '/>
 		<label>Quantity: </label> " . $_SESSION["cpeBlack"] . "<br>
@@ -123,7 +123,7 @@
   <?php
   if(isset($_SESSION["cpeBlue"]) && $_SESSION["cpeBlue"] > 0) {
 	  echo "<div>
-	  <h1>Blue ClearPoint Elite 0.5 mm Mechanical Pencil</h1>
+	  <h3>Blue ClearPoint Elite 0.5 mm Mechanical Pencil</h3>
 	  <img src='PaperMateEliteCLearPoint_blue.jpg' class='smallPic' alt='Paper Mate Clear Point Elite' 
         style='float:left; min-height:100% max-width: 100% '/>
 		<label>Quantity: </label> " . $_SESSION["cpeBlue"] . "<br>
@@ -136,7 +136,7 @@
   <?php
   if(isset($_SESSION["cpeGreen"]) && $_SESSION["cpeGreen"] > 0) {
 	  echo "<div>
-	  <h1>Green ClearPoint Elite 0.5 mm Mechanical Pencil</h1>
+	  <h3>Green ClearPoint Elite 0.5 mm Mechanical Pencil</h3>
 	  <img src='PaperMateEliteCLearPoint_green.jpg' class='smallPic' alt='Paper Mate Clear Point Elite'
         style='float:left; min-height:100% max-width: 100% '/>
 		<label>Quantity: </label> " . $_SESSION["cpeGreen"] . "<br>
@@ -149,7 +149,7 @@
   <?php
   if(isset($_SESSION["cpeGrey"]) && $_SESSION["cpeGrey"] > 0) {
 	  echo "<div>
-	  <h1>Grey ClearPoint Elite 0.5 mm Mechanical Pencil</h1>
+	  <h3>Grey ClearPoint Elite 0.5 mm Mechanical Pencil</h3>
 	  <img src='PaperMateEliteCLearPoint_grey.jpg' class='smallPic' alt='Paper Mate Clear Point Elite' 
         style='float:left; min-height:100% max-width: 100% '/>
 		<label>Quantity: </label> " . $_SESSION["cpeGrey"] . "<br>
@@ -162,7 +162,7 @@
   <?php
   if(isset($_SESSION["cpeRed"]) && $_SESSION["cpeRed"] > 0) {
 	  echo "<div>
-	  <h1>Red ClearPoint Elite 0.5 mm Mechanical Pencil</h1>
+	  <h3>Red ClearPoint Elite 0.5 mm Mechanical Pencil</h3>
 	  <img src='PaperMateEliteCLearPoint_red.jpg' class='smallPic' alt='Paper Mate Clear Point Elite' 
         style='float:left; min-height:100% max-width: 100% '/>
 		<label>Quantity: </label> " . $_SESSION["cpeRed"] . "<br>
@@ -175,7 +175,7 @@
   <?php
   if(isset($_SESSION["erasers"]) && $_SESSION["erasers"] > 0) {
 	  echo "<div>
-	  <h1>Paper Mate Eraser Refills 2 ct. & 0.5 mm pencil lead</h1>
+	  <h3>Paper Mate Eraser Refills 2 ct. & 0.5 mm pencil lead</h3>
 	  <img src='erasers.jpg' class='smallPic' alt='Paper Mate Eraser Refills' 
         style='float:left; min-height:100% max-width: 100% '/>
 		<label>Quantity: </label> " . $_SESSION["erasers"] . "<br>
