@@ -26,7 +26,7 @@ catch (PDOEXCEPTION $ex)
 	die();
 }
 
-echo '<h1>Scripture Resources</h1>'
+echo '<h1>Scripture Resources</h1>';
 
 foreach($db->query('SELECT book, chapter, verse, content FROM scriptures') as $row)
 {
