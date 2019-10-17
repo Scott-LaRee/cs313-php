@@ -33,11 +33,11 @@ function get_db() {
 	try {
 		$dbUrl = getenv('DATABASE_URL');
 		
-	if (!isset($dbUrl) || empty($dbUrl) {
+	if (!isset($dbUrl) || empty($dbUrl)) {
 		$dbUrl = "postgres://ls981@localhost;5432/scripturesDb";
 	}
 	
-	$dbopts = parse)rul($dbUrl);
+	$dbopts = parse_url($dbUrl);
 	
 	$dbHost = $dbopts["host"];
 	$dbPort = $dbopts["port"];
@@ -49,7 +49,7 @@ function get_db() {
 	
 	$db->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
 	}
-	catch {
+	catch (PDOException $ex) {
 		echo "Error connecting to DB. Details: $ex";
 		die();
 	}
