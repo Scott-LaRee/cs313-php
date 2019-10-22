@@ -5,7 +5,7 @@
 */
 
 require "dbConnect.php";
-/*
+
   $first = validate($_POST["first_view"]);
   $last = validate($_POST["last_view"]);
 
@@ -29,7 +29,7 @@ require "dbConnect.php";
 	  echo $sql . "<br>" . $ex->getMessage();
   }
   
-  $db = null;*/
+  $db = null;
 ?>
 
  
