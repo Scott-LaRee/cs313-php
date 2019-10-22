@@ -5,6 +5,7 @@
 * connects to database
 */
 
+try {
 $url = getenv('DATABASE_URL');
 
 $dbOpts =  parse_url($url);
