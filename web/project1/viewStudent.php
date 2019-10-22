@@ -6,8 +6,8 @@
 
 require "dbConnect.php";
 
-  $first = validate($_POST["first_view"]);
-  $last = validate($_POST["last_view"]);
+  $first = validate($_POST['first_view']);
+  $last = validate($_POST['last_view']);
 
   function validate($data) {
 	  $data = trim($data);
