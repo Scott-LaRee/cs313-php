@@ -18,7 +18,7 @@ require "dbConnect.php";
   
   try {
     $sql = "SELECT * FROM student WHERE student.student_first_name = '" . $first .
-		"' AND student.student_last_name = '" . $last; . "'";
+		"' AND student.student_last_name = '" . $last . "';";
 
     $db->exec($sql);
 	
