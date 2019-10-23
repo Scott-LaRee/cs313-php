@@ -25,7 +25,7 @@ require "dbConnect.php";
 	
 	$result = $sql->fetch();
 	
-	echo $result;
+	//echo $result;
 /*
     $db->exec($sql);
 	
