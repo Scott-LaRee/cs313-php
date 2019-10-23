@@ -6,8 +6,8 @@
 
 require "dbConnect.php";
 
-  $first = validate($_POST['first_view']);//"'" . validate($_POST['first_view']) . "'";
-  $last = validate($_POST['last_view']);//"'" . validate($_POST['last_view']) . "'";
+  $first = "'" . validate($_POST['first_view']) . "'";
+  $last = "'" . validate($_POST['last_view']) . "'";
 
   function validate($data) {
 	  $data = trim($data);
@@ -25,11 +25,12 @@ require "dbConnect.php";
 	
 	$result = $sql->fetch();
 	
-	//echo $result;
+	echo $result;
 /*
     $db->exec($sql);
 	
-	echo $db;*/
+	echo $db;
+	*/
 	} 
   catch (PDOException $ex)
   {
