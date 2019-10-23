@@ -43,10 +43,13 @@ require "dbConnect.php";
  <div id="content">
   <div>
     <?php
+	echo "php begun";
   /* query excutes but gets non existent column error.*/
   try {
+	  echo "<br/> inside try";
     $sql = "SELECT * FROM events";
 	
+	echo "sql = $sql";
 	foreach($db->query($sql) as $row) 
 	{
 		print "<br/>";
