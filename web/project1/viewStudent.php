@@ -19,18 +19,12 @@ require "dbConnect.php";
   /*echo $first . " " . $last;*/
   
   try {
-    $sql = $pdo->prepare("SELECT * FROM student WHERE student.student_first_name = ?
-		 AND student.student_last_name = ?");
-	$sql->execute([$first, $last]);
-	
-	$result = $sql->fetch();
-	
-	echo $result;
-/*
+    $sql = "SELECT * FROM student WHERE student.student_first_name = 'John'
+		 AND student.student_last_name = 'Doe';";
+
     $db->exec($sql);
 	
 	echo $db;
-	*/
 	} 
   catch (PDOException $ex)
   {
