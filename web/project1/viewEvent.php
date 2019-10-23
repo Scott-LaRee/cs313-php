@@ -58,7 +58,7 @@ require "dbConnect.php";
   }
   
   try {
-    $sql = "SELECT * FROM events WHERE events.date = $date";
+    $sql = "SELECT * FROM events WHERE events.event_date = $date";
 	
 	foreach($db->query($sql) as $row) 
 	{
