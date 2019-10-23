@@ -17,10 +17,10 @@ require "dbConnect.php";
   }
   
   echo $first . " " . $last;
-  /*
+  
   try {
-    $sql = "SELECT * FROM student WHERE student.student_first_name = 'John'
-		 AND student.student_last_name = 'Doe';";
+    $sql = "SELECT * FROM student WHERE student.student_first_name = $first
+		 AND student.student_last_name = $last;";
 
     $db->exec($sql);
 	
@@ -31,7 +31,7 @@ require "dbConnect.php";
 	  echo $sql . "<br>" . $ex->getMessage();
   }
   
-  $db = null;*/
+  $db = null;
   echo "page executed";
 ?>
 
