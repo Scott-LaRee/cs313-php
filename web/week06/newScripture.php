@@ -21,7 +21,7 @@ require ("dbConnect.php");
   <label for="content">Content</label><textarea rows="5" cols="50"></textarea>
   
   <?php
-/*  
+
   try
   {
 	$statement = $db->prepare('SELECT id, name FROM topic');
@@ -44,7 +44,7 @@ require ("dbConnect.php");
 	  echo "Error coneecting to DB. Details: $ex";
 	  die();
   }
-  */
+  
   ?>
 	<br/>
   
