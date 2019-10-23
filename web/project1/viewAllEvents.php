@@ -10,7 +10,7 @@ require "dbConnect.php";
 <html lang="en-us">
 <head>
 <meta charset="utf-8">
-<title>Student info</title>
+<title>View All Events</title>
 <!--<link id="styleOfPage" type="text/css" rel="StyleSheet" 
 	href="project1.css" />-->
 
@@ -21,7 +21,7 @@ require "dbConnect.php";
    <header>
     
    <div id="pageHead">
-    <h1>STUDENT INFO</h1>
+    <h1>VIEW ALL EVENTS</h1>
    </div>
    <div id="menuBar">
     <ul id="menuBarList">
@@ -45,14 +45,12 @@ require "dbConnect.php";
     <?php
   /* query excutes but gets non existent column error.*/
   try {
-    $sql = "SELECT * FROM student";
+    $sql = "SELECT * FROM events";
 	
 	foreach($db->query($sql) as $row) 
 	{
 		print "<br/>";
-		print $row['student_first_name'] . '-' . $row['student_last_name'];
-		print "-" . $row['grad_year'] . '-' . $row['membership'];
-		print "-" . $row['office'] . '<br/>';
+		print $row['event_date'] . '-' . $row['event_title'];
 	}
 
     $db->exec($sql);

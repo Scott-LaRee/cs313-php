@@ -10,7 +10,7 @@ require "dbConnect.php";
 <html lang="en-us">
 <head>
 <meta charset="utf-8">
-<title>Student info</title>
+<title>Meeting info</title>
 <!--<link id="styleOfPage" type="text/css" rel="StyleSheet" 
 	href="project1.css" />-->
 
@@ -21,7 +21,7 @@ require "dbConnect.php";
    <header>
     
    <div id="pageHead">
-    <h1>STUDENT INFO</h1>
+    <h1>MEETING INFO</h1>
    </div>
    <div id="menuBar">
     <ul id="menuBarList">
@@ -43,9 +43,42 @@ require "dbConnect.php";
  <div id="content">
   <div>
     <?php
-  /* query excutes but gets non existent column error.*/
+
+  $month = validate($_POST['month_view']);
+  $day = validate($_POST['day_view']);
+  $year = validate($_POST['year_view']);
+  
+  $date = "'" . $year . "-" . $month . "-" . $day . "'";
+
+  function validate($data) {
+	  $data = trim($data);
+	  $data = stripslashes($data);
+	  $data = htmlspecialchars($data);
+	  return $data;
+  }
+  
   try {
-    $sql = "SELECT * FROM student";
+    $sql = "SELECT * FROM meetings WHERE meeting_date = $date";
+	
+	foreach($db->query($sql) as $row) 
+	{
+		print "<br/>";
+		print $row['meeting_date'] . '-' . $row['meeting_type'];
+	}
+
+    $db->exec($sql);
+	
+	echo $db;
+	} 
+  catch (PDOException $ex)
+  {
+	  echo $sql . "<br>" . $ex->getMessage();
+  }
+  
+  /*This works*//*
+  try {
+    $sql = "SELECT * FROM student WHERE student.student_first_name = 'John'
+		AND student.student_last_name = 'Doe'";
 	
 	foreach($db->query($sql) as $row) 
 	{
@@ -63,11 +96,9 @@ require "dbConnect.php";
   {
 	  echo $sql . "<br>" . $ex->getMessage();
   }
-  
-  $db = null;
-  echo "page executed";
-?>
-</div>
+  */
+  ?>
+  </div>
  
  </div>
 <!--<script type="text/javascript" src="project1.js" charset="UTF-8"></script>-->
@@ -76,4 +107,4 @@ require "dbConnect.php";
 </html>
 
 
- 
+  
