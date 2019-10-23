@@ -6,8 +6,10 @@
 
 require "dbConnect.php";
 
-  $first = 'John';//"'" . validate($_POST['first_view']) . "'";
-  $last = 'Doe';//"'" . validate($_POST['last_view']) . "'";
+  //$first = 'John';
+  $first = "'" . validate($_POST['first_view']) . "'";
+  //$last = 'Doe';
+  $last = "'" . validate($_POST['last_view']) . "'";
 
   function validate($data) {
 	  $data = trim($data);
