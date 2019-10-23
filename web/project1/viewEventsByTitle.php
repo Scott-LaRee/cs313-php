@@ -44,7 +44,7 @@ require "dbConnect.php";
   <div>
     <?php
 	
-	$title = "'" . validate($_POST['title_view']);
+	$title = "'" . validate($_POST['title_view']) . "'";
 
   function validate($data) {
 	  $data = trim($data);
