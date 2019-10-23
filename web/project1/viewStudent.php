@@ -6,8 +6,8 @@
 
 require "dbConnect.php";
 
-  $first = validate($_POST['first_view']);
-  $last = validate($_POST['last_view']);
+  $first = "'" . validate($_POST['first_view']) . "'";
+  $last = "'" . validate($_POST['last_view']) . "'";
 
   function validate($data) {
 	  $data = trim($data);
@@ -15,6 +15,8 @@ require "dbConnect.php";
 	  $data = htmlspecialchars($data);
 	  return $data;
   }
+  
+  echo $first . " " . $last;
   /*
   try {
     $sql = "SELECT * FROM student WHERE student.student_first_name = 'John'
