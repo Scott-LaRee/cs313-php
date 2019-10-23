@@ -20,7 +20,8 @@ $db = get_db();
   <label for="verse">Verse</label><input type="text" name="verse"><br>
   <label for="content">Content</label><textarea rows="5" cols="50"></textarea>
   
-  <?php 
+  <?php
+/*  
   try
   {
 	$statement = $db->prepare('SELECT id, name FROM topic');
@@ -43,6 +44,7 @@ $db = get_db();
 	  echo "Error coneecting to DB. Details: $ex";
 	  die();
   }
+  */
   ?>
 	<br/>
   
