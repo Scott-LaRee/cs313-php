@@ -15,7 +15,7 @@ require "dbConnect.php";
 	  $data = htmlspecialchars($data);
 	  return $data;
   }
-  */
+  *//*
   try {
     $sql = "SELECT * FROM student WHERE student.student_first_name = 'John'
 		 AND student.student_last_name = 'Doe';";
@@ -29,7 +29,8 @@ require "dbConnect.php";
 	  echo $sql . "<br>" . $ex->getMessage();
   }
   
-  $db = null;
+  $db = null;*/
+  echo "page executed";
 ?>
 
  
