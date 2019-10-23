@@ -6,8 +6,8 @@
 
 require "dbConnect.php";
 
-  $first = "'" . validate($_POST['first_view']) . "'";
-  $last = "'" . validate($_POST['last_view']) . "'";
+  $first = 'John';//"'" . validate($_POST['first_view']) . "'";
+  $last = 'Doe';//"'" . validate($_POST['last_view']) . "'";
 
   function validate($data) {
 	  $data = trim($data);
@@ -19,8 +19,8 @@ require "dbConnect.php";
   /*echo $first . " " . $last;*/
   
   try {
-    $sql = "SELECT * FROM student WHERE student.student_first_name = 'John'
-		 AND student.student_last_name = 'Doe';";
+    $sql = "SELECT * FROM student WHERE student.student_first_name = $first
+		 AND student.student_last_name = $last;";
 
     $db->exec($sql);
 	
