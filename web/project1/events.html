@@ -35,7 +35,7 @@
  <div id="content">
   <div>
    <h1>View Events by Date</h1>
-   <form name="view_event">
+   <form name="view_event" method="POST" action="viewEvent.php">
    <label for="month_view">Month</label>
    <select name="month_view" id="month_view">
      <option value="01">Jan</option>
@@ -100,13 +100,13 @@
    <div id="view_div"></div>
    
    <h1>View Events by Title</h1>
-   <form action="viewEventsByTitle.php">
+   <form name="view_by_title" action="viewEventsByTitle.php" method="POST">
      <input type="text" name="title_view" id="title_view">
      <input type="Submit" value="View Events">
    <form>
    
    <h1>View All Events</h1>
-   <form action="viewAllEvents.php">
+   <form name="view_all_events" action="viewAllEvents.php">
    <input type="submit" value="View All"><br/>
    </form>
    
