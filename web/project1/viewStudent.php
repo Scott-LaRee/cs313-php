@@ -5,7 +5,7 @@
 */
 
 require "dbConnect.php";
-
+/*
   $first = validate($_POST['first_view']);
   $last = validate($_POST['last_view']);
 
@@ -15,7 +15,7 @@ require "dbConnect.php";
 	  $data = htmlspecialchars($data);
 	  return $data;
   }
-  
+  */
   try {
     $sql = "SELECT * FROM student WHERE student.student_first_name = 'John'
 		 AND student.student_last_name = 'Doe';";
