@@ -3,8 +3,9 @@
 
 
 */
-
+echo "before connect";
 require "dbConnect.php";
+echo "after connect";
 ?>
 <!DOCTYPE HTML>
 <html lang="en-us">
