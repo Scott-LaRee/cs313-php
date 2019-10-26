@@ -11,8 +11,8 @@ require "dbConnect.php";
 <head>
 <meta charset="utf-8">
 <title>View All Events</title>
-<!--<link id="styleOfPage" type="text/css" rel="StyleSheet" 
-	href="project1.css" />-->
+<link id="styleOfPage" type="text/css" rel="StyleSheet" 
+	href="project1.css" />
 
 </head>
 <body>
@@ -28,7 +28,7 @@ require "dbConnect.php";
      <li class="menuBarItem"><a href="fbla.html">HOME</a></li>
      <li class="menuBarItem"><a href="student.html">STUDENT INFO</a></li>
      <li class="menuBarItem"><a href="meetings.html">MEETINGS</a></li>
-	 <li class="menuBarItem"><a href="events.html">EVENTS</a></li>
+	 <li class="menuBarItem"><a href="events.php">EVENTS</a></li>
     </ul>
    </div>
    </header>
@@ -37,7 +37,7 @@ require "dbConnect.php";
 <div id="sideBarList">
     <div class="sideBarItem"><h3><a href="student.html">STUDENT</a></h3></div>
     <div class="sideBarItem"><h3><a href="meetings.html">MEETINGS</a></h3></div>
-    <div class="sideBarItem"><h3><a href ="events.html">EVENTS</a></h3></div>
+    <div class="sideBarItem"><h3><a href ="events.php">EVENTS</a></h3></div>
   </div>
 </div>
  <div id="content">
