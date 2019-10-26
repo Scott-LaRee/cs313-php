@@ -23,7 +23,7 @@ require "dbConnect.php";
      <li class="menuBarItem"><a href="fbla.html">HOME</a></li>
      <li class="menuBarItem"><a href="student.html">STUDENT INFO</a></li>
      <li class="menuBarItem"><a href="meetings.html">MEETINGS</a></li>
-	 <li class="menuBarItem"><a href="events.html">EVENTS</a></li>
+	 <li class="menuBarItem"><a href="events.php">EVENTS</a></li>
     </ul>
    </div>
    </header>
@@ -32,7 +32,7 @@ require "dbConnect.php";
 <div id="sideBarList">
     <div class="sideBarItem"><h3><a href="student.html">STUDENT</a></h3></div>
     <div class="sideBarItem"><h3><a href="meetings.html">MEETINGS</a></h3></div>
-    <div class="sideBarItem"><h3><a href ="events.html">EVENTS</a></h3></div>
+    <div class="sideBarItem"><h3><a href ="events.php">EVENTS</a></h3></div>
   </div>
 </div>
  <div id="content">
@@ -63,6 +63,8 @@ require "dbConnect.php";
 	   die();
 	 }
    ?>
+   
+   <!--
    <label for="month_view">Month</label>
    <select name="month_view" id="month_view">
      <option value="01">Jan</option>
@@ -121,11 +123,11 @@ require "dbConnect.php";
 	 <option value="2020">2020</option>
 	 <option value="2021">2021</option>
 	 <option value="2022">2022</option>
-   </select><br/>
+   </select><br/>-->
    <input type="submit" value="View Event">
    </form>
    <div id="view_div"></div>
-   
+   <!--
    <h1>View Events by Title</h1>
    <form name="view_by_title" action="viewEventsByTitle.php" method="POST">
      <input type="text" name="title_view" id="title_view">
@@ -136,9 +138,9 @@ require "dbConnect.php";
    <form name="view_all_events" action="viewAllEvents.php">
    <input type="submit" value="View All"><br/>
    </form>
-   
+   -->
    <h1>New Event</h1>
-   <form name="new_event">
+   <form name="new_event" action="newEvent.php" method="POST">
      <label for="month_add">Month</label>
    <select name="month_add" id="month_add">
      <option value="01">Jan</option>
@@ -201,6 +203,8 @@ require "dbConnect.php";
    
    <label for="title">Event Title</label>
    <input type="text" id="title" name="title">
+   <label for="students">Students Present</label>
+   <textarea name="students" id="students"></textarea>
    </form>
    <div id="add_div"></div>
    </div>
