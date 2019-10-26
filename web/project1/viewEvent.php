@@ -63,7 +63,23 @@ require "dbConnect.php";
 	foreach($db->query($sql) as $row) 
 	{
 		print "<br/>";
-		print $row['event_date'] . '-' . $row['event_title'];
+		print "<h4>Attendace for " . $row['event_title'] . " event on " . $row['event_date'];
+		/*print $row['event_date'] . '-' . $row['event_title'];*/
+		$id = $row['id'];
+		
+		$sql2 = "SELECT student_first_name, student_last_name FROM student
+				INNER JOIN event_attendance
+					ON student.id = event_attendance.student_id
+				INNER JOIN events
+					ON event_attendance.event_id = events.id
+				WHERE
+					events.id = $id";
+		
+		foreach($db->query($sql2) as $row2)
+		{
+			print "<p> " . $row2['student_first_name'] . " " .
+					$row2['sudent_last_name'] . "</p>";
+		}
 	}
 
     $db->exec($sql);
