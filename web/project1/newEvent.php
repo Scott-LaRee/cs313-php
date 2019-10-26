@@ -43,6 +43,7 @@ require "dbConnect.php";
       $year = validate($_POST['year_add']);
 	  $title = "'" . validate($_POST['title_add']);
       $date = "'" . $year . "-" . $month . "-" . $day . "'";
+	  echo "date = $date";
 	  
 	  function validate($data) {
 	  $data = trim($data);
@@ -56,6 +57,7 @@ require "dbConnect.php";
 	  $statement->execute();
 	  
 	  $eventId = $db->lastInsertId("id_seq");
+	  echo "eventId = $eventId";
 	  
 	  $text = validate($_POST['students']);
 	  
@@ -65,12 +67,15 @@ require "dbConnect.php";
 	  foreach($students as $student)
 	  {
 		  $name = explode(" ", $student);
+		  
+		  echo "name = $name[0] $name[1]"
 		  $statement2 = $db->prepare("SELECT id FROM student WHERE student.student_first_name = $name[0] AND
 		                 student.student_last_name = $name[1]");
 		  $statement2->execute();
 		  
 		  $row = $statement2->fetch(PDO::FETCH_ASSOC);
-		  $studentId = $row['id'];		  
+		  $studentId = $row['id'];	
+          echo "studentId = $studentId";		  
 	  }
 	  
 	  $statement3 = $db->prepare("INSERT INTO event_attendance (event_id, student_id)
