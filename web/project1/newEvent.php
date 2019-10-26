@@ -67,10 +67,12 @@ require "dbConnect.php";
 	  foreach($students as $student)
 	  {
 		  $name = explode(" ", $student);
+		  $first = "'" . $name[0] . "'";
+		  $last = "'" . $name[1] . "'";
 		  
 		  echo "name = $name[0] $name[1]"
-		  $statement2 = $db->prepare("SELECT id FROM student WHERE student.student_first_name = $name[0] AND
-		                 student.student_last_name = $name[1]");
+		  $statement2 = $db->prepare("SELECT id FROM student WHERE student.student_first_name = $first
+		  AND student.student_last_name = $last");
 		  $statement2->execute();
 		  
 		  $row = $statement2->fetch(PDO::FETCH_ASSOC);
