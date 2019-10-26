@@ -3,9 +3,8 @@
 
 
 */
-echo "before connect";
+
 require "dbConnect.php";
-echo "after connect";
 ?>
 <!DOCTYPE HTML>
 <html lang="en-us">
@@ -44,13 +43,10 @@ echo "after connect";
  <div id="content">
   <div>
     <?php
-	echo "php begun";
-  /* query excutes but gets non existent column error.*/
+ 
   try {
-	  echo "<br/> inside try";
     $sql = "SELECT * FROM events";
 	
-	echo "sql = $sql";
 	foreach($db->query($sql) as $row) 
 	{
 		print "<br/>";
@@ -67,7 +63,7 @@ echo "after connect";
   }
   
   $db = null;
-  echo "page executed";
+
 ?>
 </div>
  
@@ -76,6 +72,3 @@ echo "after connect";
 </div>
 </body>
 </html>
-
-
- 
