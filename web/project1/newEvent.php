@@ -60,9 +60,14 @@ require "dbConnect.php";
 	  echo "eventId = $eventId";
 	  
 	  $text = validate($_POST['students']);
-	  
+	  echo "text = $text";
 	  /*put each line of text area as an element of an array*/
 	  $students = explode("\n", $text); 
+	  
+	  foreach ($students as $info)
+	  {
+		  echo "name = $info <br/>";
+	  }
 	  $studentId = 0;
 	  foreach($students as $student)
 	  {
@@ -70,7 +75,7 @@ require "dbConnect.php";
 		  $first = "'" . $name[0] . "'";
 		  $last = "'" . $name[1] . "'";
 		  
-		  echo "name = $name[0] $name[1]";
+		  echo "name = $first $last";
 		  $statement2 = $db->prepare('SELECT id FROM student WHERE student.student_first_name = $first 
 		  AND student.student_last_name = $last');
 		  $statement2->execute();
