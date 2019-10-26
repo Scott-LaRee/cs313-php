@@ -74,12 +74,13 @@ require "dbConnect.php";
 					ON event_attendance.event_id = events.id
 				WHERE
 					events.id = $id";
-		
+		print "<p>";
 		foreach($db->query($sql2) as $row2)
 		{
-			print "<p> " . $row2['student_first_name'] . " " .
-					$row2['sudent_last_name'] . "</p>";
+			print $row2['student_first_name'] . " " .
+					$row2['student_last_name'] . "<br/>";
 		}
+		print "</p>";
 	}
 
     $db->exec($sql);
