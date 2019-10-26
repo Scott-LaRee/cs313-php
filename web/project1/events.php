@@ -134,6 +134,7 @@ require "dbConnect.php";
    <input type="text" id="title" name="title">
    <label for="students">Students Present</label>
    <textarea name="students" id="students"></textarea>
+   <input type="submit" value="Add Event">
    </form>
    <div id="add_div"></div>
    </div>
