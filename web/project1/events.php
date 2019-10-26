@@ -48,20 +48,20 @@ require "dbConnect.php";
 	   
 	   echo "<select name='date_view' id ='date_view'>";
 	   
-	   while($row = statement->fetch(PDO::FETCH_ASSOC))
+	   while($row = $statement->fetch(PDO::FETCH_ASSOC))
 	   {
 	     $id = $row['id'];
 		 $date = $row['event_date'];
 		 
 		 echo "<option value='$date'>$date</option>";
-	   ]
+	   }
 	   echo "</select><br/>";
 	 }
 	 catch (PDOException $ex)
 	 {
 	   echo "Error connecting to db. Details: $ex";
 	   die();
-	 ]
+	 }
    ?>
    <label for="month_view">Month</label>
    <select name="month_view" id="month_view">
