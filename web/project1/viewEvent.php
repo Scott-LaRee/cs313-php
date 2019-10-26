@@ -43,13 +43,13 @@ require "dbConnect.php";
  <div id="content">
   <div>
     <?php
-	$month = validate($_POST['month_view']);
+	/*$month = validate($_POST['month_view']);
     $day = validate($_POST['day_view']);
     $year = validate($_POST['year_view']);
 	$title = "'" . validate($_POST['title_view']);
-  
-    $date = "'" . $year . "-" . $month . "-" . $day . "'";
-
+  */
+    //$date = "'" . $year . "-" . $month . "-" . $day . "'";
+    $date = "'" . validate($_POST['date_view']) . "'";
   function validate($data) {
 	  $data = trim($data);
 	  $data = stripslashes($data);
