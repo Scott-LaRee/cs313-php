@@ -41,7 +41,7 @@ require "dbConnect.php";
 	  $first = validate($_POST['first_update']);
       $last = validate($_POST['last_update']);
       $year = validate($_POST['year_update']);
-	  $membership = "'" . validate($_POST['member_update']) . "'";
+	  $membership = validate($_POST['member_update']);
 	  $office = validate($_POST['office_update']);
 	  	  
 	  function validate($data) {
