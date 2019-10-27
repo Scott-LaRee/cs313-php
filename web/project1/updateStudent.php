@@ -57,6 +57,7 @@ require "dbConnect.php";
 		  $query = 'UPDATE student SET grad_year = :year WHERE 
 						student.student_first_name = :first 
 						AND student.student_last_name = :last';
+		  echo $query;
 		  $statement = $db->prepare($query);
 		  $statement->bindValue->prepare(':year', $year);
 		  $statement->bindValue->prepare(':first', $first);
