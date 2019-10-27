@@ -84,8 +84,22 @@ require "dbConnect.php";
 	  
 	  if ($office != "")
 	  {
-		  $statement = $db->prepare('UPDATE student SET office = :office WHERE 
+		try
+		{
+		  $sql = "UPDATE student SET office = 'pres' WHERE 
+				student.student_first_name = 'John' AND
+				student.student_last_name = 'Doe'";
+		  $statement = $db->prepare($sql);
+		  
+		  $statement->execute();
+		  /*$statement = $db->prepare('UPDATE student SET office = :office WHERE 
 						student.student_first_name = :first AND student.student_last_name = :last');
+	  */
+		}
+		catch (PDOException $ex)
+		{
+			echo $sql . "<br>" . $ex->getMessage();
+		}
 	  }
 	  /*
 	  $statement = $db->prepare();
