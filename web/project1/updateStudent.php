@@ -58,7 +58,9 @@ require "dbConnect.php";
 			$sql = "UPDATE student SET grad_year = $year WHERE 
 						student.student_first_name = $first 
 						AND student.student_last_name = $last";
-			$db->query($sql);
+			//$db->query($sql);
+			
+			$db->exec($sql);
 		  
 		  echo "end of year";
 		  }
