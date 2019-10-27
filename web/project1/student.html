@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <title>Student info</title>
-<!--<link id="styleOfPage" type="text/css" rel="StyleSheet" 
-	href="project1.css" />-->
+<link id="styleOfPage" type="text/css" rel="StyleSheet" 
+	href="project1.css" />
 
 </head>
 <body>
@@ -65,6 +65,21 @@
      <input type="submit" value="Add Student">
    </form>
    <div id="add_div"></div>
+   
+   <h1>Update Student</h1>
+   <form name="update" action="updateStudent.php" method="POST">
+     <label for="first_update">First Name</label>
+	 <input type="text" name="first_update" id="first_update">
+	 <label for="last_update">Last Name</label>
+	 <input type="text" name="last_update" id="last_update">
+	 <label for="year_update">Graduation year</label>
+	 <input type="text" name="year_update" id="year_update">
+	 <label for="member_update">Membership Paid</label>
+	 <input type="text" name="member_update" id="member_update">
+	 <label for="office_update">Office held<label>
+	 <input type="text" name="office_update" id="office_update">
+	 <input type="submit" value="Update Student">
+   </form>
    </div>
  
  </div>
