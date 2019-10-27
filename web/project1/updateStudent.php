@@ -51,17 +51,17 @@ require "dbConnect.php";
 	  return $data;
       }
 	  
-	  if (isset($year))
+	  if ($year != "")
 	  {
 		  echo "year = $year \n";
 	  }
 	  
-	  if (isset($membership))
+	  if (membership != "")
 	  {
 		  echo "membership = $membership \n";
 	  }
 	  
-	  if (isset($office))
+	  if (office != "")
 	  {
 		  echo "office = $office \n";
 	  }
