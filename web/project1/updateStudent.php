@@ -38,11 +38,11 @@ require "dbConnect.php";
  <div id="content">
   <div>
     <?php
-	  $first = validate($_POST['first_update']);
-      $last = validate($_POST['last_update']);
+	  $first = "'" . validate($_POST['first_view']) . "'";
+      $last = "'" . validate($_POST['last_view']) . "'";
       $year = validate($_POST['year_update']);
-	  $membership = validate($_POST['member_update']);
-	  $office = validate($_POST['office_update']);
+	  $membership = "'" . validate($_POST['member_update']) . "'";
+	  $office = "'" . validate($_POST['office_update']) . "'";
 	  	  
 	  function validate($data) {
 	  $data = trim($data);
@@ -54,16 +54,18 @@ require "dbConnect.php";
 	  
 	  if ($year != "")
 	  {
-		  $query = 'UPDATE student SET grad_year = :year WHERE 
-						student.student_first_name = :first 
-						AND student.student_last_name = :last';
-		  $statement = $db->prepare($query);
-		  $statement->bindValue->prepare(':year', $year);
-		  $statement->bindValue->prepare(':first', $first);
-		  $statement->bindValue->prepare(':last', $last);
+		  try {
+			$sql = "UPDATE student SET grad_year = $year WHERE 
+						student.student_first_name = $first 
+						AND student.student_last_name = $last";
+			$db->query($sql);
 		  
-		  $statement->execute();
 		  echo "end of year";
+		  }
+		  catch (PDOException $ex)
+		  {
+			  echo $sql . "<br>" . $ex->getMessage();
+		  }
 	  }
 	  
 	  if ($membership != "")
