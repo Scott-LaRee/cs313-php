@@ -51,19 +51,30 @@ require "dbConnect.php";
 	  return $data;
       }
 	  
+	  
 	  if ($year != "")
 	  {
-		  echo "year = $year \n";
+		  $query = 'UPDATE student SET grad_year = :year WHERE 
+						student.student_first_name = :first 
+						AND student.student_last_name = :last';
+		  $statement = $db->prepare($query);
+		  $statement->bindValue->prepare(':year', $year);
+		  $statement->bindValue->prepare(':first', $first);
+		  $statement->bindValue->prepare(':last', $last);
+		  
+		  $statement->execute();
 	  }
 	  
 	  if ($membership != "")
 	  {
-		  echo "membership = $membership \n";
+		  $statement = $db->prepare('UPDATE student SET membership = :membership WHERE 
+						student.student_first_name = :first AND student.student_last_name = :last');
 	  }
 	  
 	  if ($office != "")
 	  {
-		  echo "office = $office \n";
+		  $statement = $db->prepare('UPDATE student SET office = :office WHERE 
+						student.student_first_name = :first AND student.student_last_name = :last');
 	  }
 	  /*
 	  $statement = $db->prepare();
