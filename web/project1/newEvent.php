@@ -55,7 +55,8 @@ require "dbConnect.php";
 	  
 	  $statement = $db->prepare("INSERT INTO events (event_date, event_title)
 					VALUES (:date, :title)");
-					
+	  $statement->bindValue(':event_date', $date);
+	  $statement->bindValue(':title', $title);			
 	  $statement->execute();
 	  
 	  $eventId = $db->lastInsertId("id_seq");
@@ -78,8 +79,10 @@ require "dbConnect.php";
 		  $last = "'" . $name[1] . "'";
 		  
 		  echo "name = $first $last";
-		  $statement2 = $db->prepare('SELECT id FROM student WHERE student.student_first_name = $first 
-		  AND student.student_last_name = $last');
+		  $statement2 = $db->prepare('SELECT id FROM student WHERE student.student_first_name = :firts 
+		  AND student.student_last_name = :last');
+		  $statement2->bindValue(':first', $first);
+		  $statement2->bindValue(':last', $last);
 		  $statement2->execute();
 		  
 		  $row = $statement2->fetch(PDO::FETCH_ASSOC);
@@ -88,8 +91,11 @@ require "dbConnect.php";
 	  }
 	  
 	  $statement3 = $db->prepare("INSERT INTO event_attendance (event_id, student_id)
-	                              VALUES ($eventId, $studentId)");
+	                              VALUES (:eventId, :studentId)");
 	
+	  $statement3->bindValue(':event_id', $eventId);
+	  $statement3->bindValue(':student_id', $studentId);
+	  
 	  $statement3->execute();
 
 	  echo "Event added";
