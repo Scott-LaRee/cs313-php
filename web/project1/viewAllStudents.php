@@ -11,8 +11,8 @@ require "dbConnect.php";
 <head>
 <meta charset="utf-8">
 <title>Student info</title>
-<!--<link id="styleOfPage" type="text/css" rel="StyleSheet" 
-	href="project1.css" />-->
+<link id="styleOfPage" type="text/css" rel="StyleSheet" 
+	href="project1.css" />
 
 </head>
 <body>

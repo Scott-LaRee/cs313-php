@@ -131,9 +131,9 @@ require "dbConnect.php";
    </select><br/>
    
    <label for="title">Event Title</label>
-   <input type="text" id="title" name="title">
+   <input type="text" id="title" name="title"><br/>
    <label for="students">Students Present</label>
-   <textarea name="students" id="students"></textarea>
+   <textarea name="students" id="students"></textarea><br/>
    <input type="submit" value="Add Event">
    </form>
    <div id="add_div"></div>

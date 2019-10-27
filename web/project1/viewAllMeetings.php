@@ -11,8 +11,8 @@ require "dbConnect.php";
 <head>
 <meta charset="utf-8">
 <title>View All Meetings</title>
-<!--<link id="styleOfPage" type="text/css" rel="StyleSheet" 
-	href="project1.css" />-->
+<link id="styleOfPage" type="text/css" rel="StyleSheet" 
+	href="project1.css" />
 
 </head>
 <body>
@@ -63,7 +63,7 @@ require "dbConnect.php";
   }
   
   $db = null;
-  echo "page executed";
+  
 ?>
 </div>
  
