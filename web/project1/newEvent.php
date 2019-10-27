@@ -44,6 +44,7 @@ require "dbConnect.php";
 	  $title = "'" . validate($_POST['title_add']);
       $date = "'" . $year . "-" . $month . "-" . $day . "'";
 	  echo "date = $date";
+	  echo "title = $title";
 	  
 	  function validate($data) {
 	  $data = trim($data);
