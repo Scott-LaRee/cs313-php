@@ -41,16 +41,9 @@ require "dbConnect.php";
 	  $first = validate($_POST['first_update']);
       $last = validate($_POST['last_update']);
       $year = validate($_POST['year_update']);
-	  if($_POST['member_update'])
-	  {
 	  $membership = validate($_POST['member_update']);
-	  }
-	  
-	  if($_POST['office_update'])
-	  {
 	  $office = validate($_POST['office_update']);
-	  }
-	  
+	  	  
 	  function validate($data) {
 	  $data = trim($data);
 	  $data = stripslashes($data);
@@ -63,12 +56,12 @@ require "dbConnect.php";
 		  echo "year = $year \n";
 	  }
 	  
-	  if (membership != "")
+	  if ($membership != "")
 	  {
 		  echo "membership = $membership \n";
 	  }
 	  
-	  if (office != "")
+	  if ($office != "")
 	  {
 		  echo "office = $office \n";
 	  }
