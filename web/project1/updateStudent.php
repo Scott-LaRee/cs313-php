@@ -55,12 +55,16 @@ require "dbConnect.php";
 	  if ($year != "")
 	  {
 		  try {
-			$sql = "UPDATE student SET grad_year = $year WHERE 
-						student.student_first_name = $first 
-						AND student.student_last_name = $last";
-			//$db->query($sql);
+			$query = 'UPDATE student SET grad_year = :year WHERE 
+						student.student_first_name = :first 
+						AND student.student_last_name = :last';
 			
-			$db->exec($sql);
+			$statement = $db->prepare($query);
+			$statement->bindValue(':year', $year);
+			$statement->bindValue(':first', $first);
+			$statement->bindValue(':last', $last);
+			
+			$statement->execute();
 		  
 		  echo "end of year";
 		  }
