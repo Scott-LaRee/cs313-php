@@ -76,8 +76,10 @@ require "dbConnect.php";
 	  
 	  if ($membership != "")
 	  {
-		  $statement = $db->prepare('UPDATE student SET membership = :membership WHERE 
-						student.student_first_name = :first AND student.student_last_name = :last');
+		  $sql = 'UPDATE student SET membership = ? WHERE 
+				student.student_first_name = ? AND student.student_last_name = ?';
+		  $stmt = $pdo->prepare($sql);
+		  $stmt->execute([$year, $first, $last]);
 	  }
 	  
 	  if ($office != "")
