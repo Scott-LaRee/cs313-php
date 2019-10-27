@@ -38,11 +38,11 @@ require "dbConnect.php";
  <div id="content">
   <div>
     <?php
-	  $first = "'" . validate($_POST['first_view']) . "'";
-      $last = "'" . validate($_POST['last_view']) . "'";
+	  $first = validate($_POST['first_view']);
+      $last = validate($_POST['last_view']);
       $year = validate($_POST['year_update']);
-	  $membership = "'" . validate($_POST['member_update']) . "'";
-	  $office = "'" . validate($_POST['office_update']) . "'";
+	  $membership = validate($_POST['member_update']);
+	  $office = validate($_POST['office_update']);
 	  	  
 	  function validate($data) {
 	  $data = trim($data);
