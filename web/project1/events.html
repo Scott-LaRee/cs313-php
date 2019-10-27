@@ -3,8 +3,9 @@
 <head>
 <meta charset="utf-8">
 <title>FBLA Events</title>
-<!--<link id="styleOfPage" type="text/css" rel="StyleSheet" 
-	href="project1.css" />-->
+
+<link id="styleOfPage" type="text/css" rel="StyleSheet" 
+	href="project1.css" />
 
 </head>
 <body>
@@ -36,6 +37,32 @@
   <div>
    <h1>View Events by Date</h1>
    <form name="view_event" method="POST" action="viewEvent.php">
+   <label for='date'>Select Date</label>
+   <?php
+     try
+	 {
+	   $statement = $db->prepare('Select id, event_date FROM events');
+	   $statement->execute();
+	   
+	   echo "<select name='date_view' id ='date_view'>";
+	   
+	   while($row = statement->fetch(PDO::FETCH_ASSOC))
+	   {
+	     $id = $row['id'];
+		 $date = $row['event_date'];
+		 $title = $row['event_title'];
+		 
+		 echo "<option value='$date'>$date $title</option>";
+	   ]
+	   echo "</select><br/>";
+	 }
+	 catch (PDOException $ex)
+	 {
+	   echo "Error connecting to db. Details: $ex";
+	   die();
+	 ]
+   ?>
+   <!--
    <label for="month_view">Month</label>
    <select name="month_view" id="month_view">
      <option value="01">Jan</option>
@@ -94,11 +121,11 @@
 	 <option value="2020">2020</option>
 	 <option value="2021">2021</option>
 	 <option value="2022">2022</option>
-   </select><br/>
+   </select><br/>-->
    <input type="submit" value="View Event">
    </form>
    <div id="view_div"></div>
-   
+   <!--
    <h1>View Events by Title</h1>
    <form name="view_by_title" action="viewEventsByTitle.php" method="POST">
      <input type="text" name="title_view" id="title_view">
@@ -109,7 +136,7 @@
    <form name="view_all_events" action="viewAllEvents.php">
    <input type="submit" value="View All"><br/>
    </form>
-   
+   -->
    <h1>New Event</h1>
    <form name="new_event">
      <label for="month_add">Month</label>
