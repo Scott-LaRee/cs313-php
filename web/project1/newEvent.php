@@ -41,7 +41,7 @@ require "dbConnect.php";
 	  $month = validate($_POST['month_add']);
       $day = validate($_POST['day_add']);
       $year = validate($_POST['year_add']);
-	  $title = "'" . validate($_POST['title']) . "'";
+	  $title = validate($_POST['title']);
       $date = "'" . $year . "-" . $month . "-" . $day . "'";
 	  echo "date = $date";
 	  echo "title = $title";
