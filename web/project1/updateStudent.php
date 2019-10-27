@@ -101,53 +101,7 @@ require "dbConnect.php";
 			echo $sql . "<br>" . $ex->getMessage();
 		}
 	  }
-	  /*
-	  $statement = $db->prepare();
-	  $statement->bindValue(':event_date', $date);
-	  $statement->bindValue(':title', $title);			
-	  $statement->execute();
 	  
-	  $eventId = $db->lastInsertId("id_seq");
-	  echo "eventId = $eventId";
-	  
-	  $text = validate($_POST['students']);
-	  echo "text = $text";
-	  /*put each line of text area as an element of an array*/
-	  /*
-	  $students = explode("\n", $text); 
-	  
-	  foreach ($students as $info)
-	  {
-		  echo "name = $info <br/>";
-	  }
-	  $studentId = 0;
-	  foreach($students as $student)
-	  {
-		  $name = explode(" ", $student);
-		  $first = "'" . $name[0] . "'";
-		  $last = "'" . $name[1] . "'";
-		  
-		  echo "name = $first $last";
-		  $statement2 = $db->prepare('SELECT id FROM student WHERE student.student_first_name = :firts 
-		  AND student.student_last_name = :last');
-		  $statement2->bindValue(':first', $first);
-		  $statement2->bindValue(':last', $last);
-		  $statement2->execute();
-		  
-		  $row = $statement2->fetch(PDO::FETCH_ASSOC);
-		  $studentId = $row['id'];	
-          echo "studentId = $studentId";		  
-	  }
-	  
-	  $statement3 = $db->prepare("INSERT INTO event_attendance (event_id, student_id)
-	                              VALUES (:eventId, :studentId)");
-	
-	  $statement3->bindValue(':event_id', $eventId);
-	  $statement3->bindValue(':student_id', $studentId);
-	  
-	  $statement3->execute();
-
-	  echo "Event added";*/
 	?>  
    </div>
  
