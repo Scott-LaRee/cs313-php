@@ -43,7 +43,6 @@ require "dbConnect.php";
       $year = validate($_POST['year_update']);
 	  $membership = "'" . validate($_POST['member_update']) . "'";
 	  $office = validate($_POST['office_update']);
-      $date = "'" . $year . "-" . $month . "-" . $day . "'";
 	  	  
 	  function validate($data) {
 	  $data = trim($data);
@@ -54,22 +53,17 @@ require "dbConnect.php";
 	  
 	  if (isset($year))
 	  {
-		  echo "year = $year";
+		  echo "year = $year \n";
 	  }
 	  
 	  if (isset($membership))
 	  {
-		  echo "membership = $membership";
-	  }
-	  
-	  if (isset($date))
-	  {
-		  echo "date = $date";
+		  echo "membership = $membership \n";
 	  }
 	  
 	  if (isset($office))
 	  {
-		  echo "office = $office";
+		  echo "office = $office \n";
 	  }
 	  /*
 	  $statement = $db->prepare();
