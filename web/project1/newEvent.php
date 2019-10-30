@@ -100,8 +100,8 @@ $db = get_db();
 	  $statement3 = $db->prepare("INSERT INTO event_attendance (event_id, student_id)
 	                              VALUES (:eventId, :studentId)");
 	
-	  $statement3->bindValue(':event_id', $eventId);
-	  $statement3->bindValue(':student_id', $studentId);
+	  $statement3->bindValue(':eventId', $eventId);
+	  $statement3->bindValue(':studentId', $studentId);
 	  
 	  $statement3->execute();
 
