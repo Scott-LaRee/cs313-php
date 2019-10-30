@@ -66,7 +66,7 @@ $db = get_db();
 	  $statement->execute();
 	  
 	  
-	  $eventId = $db->lastInsertId("id_seq");
+	  $eventId = $db->lastInsertId("events_id_seq");
 	  echo "eventId = $eventId";
 	  
 	  $text = validate($_POST['students']);
