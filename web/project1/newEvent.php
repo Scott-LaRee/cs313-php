@@ -53,6 +53,8 @@ $db = get_db();
 	  $data = htmlspecialchars($data);
 	  return $data;
       }
+	  
+	  try {
 	  $query = 'INSERT INTO events (event_date, event_title)
 					VALUES (:date, :title)';
 	  				
@@ -61,6 +63,11 @@ $db = get_db();
 	  $statement->bindValue(':event_date', $date);
 	  $statement->bindValue(':title', $title);			
 	  $statement->execute();
+	  }
+	  catch (PDOException $ex) {
+		  echo "ERROR executing statement Details: $ex";
+	      die();
+	  }
 	  
 	  $eventId = $db->lastInsertId("id_seq");
 	  echo "eventId = $eventId";
