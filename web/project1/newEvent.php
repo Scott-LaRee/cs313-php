@@ -82,8 +82,8 @@ $db = get_db();
 	  foreach($students as $student)
 	  {
 		  $name = explode(" ", $student);
-		  $first = "'" . $name[0] . "'";
-		  $last = "'" . $name[1] . "'";
+		  $first = $name[0];
+		  $last = $name[1];
 		  
 		  echo "name = $first $last";
 		  $statement2 = $db->prepare('SELECT id FROM student WHERE student.student_first_name = :first 
