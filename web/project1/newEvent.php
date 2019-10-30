@@ -57,7 +57,7 @@ require "dbConnect.php";
 	  				
 	  $statement = $db->prepare($query);
 	  echo $query;
-	  $statement->bindValue(':event_date', $date, PDO::PARAM_STR);
+	  $statement->bindValue(':event_date', $date);
 	  $statement->bindValue(':title', $title, PDO::PARAM_STR);			
 	  $statement->execute();
 	  
