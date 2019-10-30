@@ -4,7 +4,7 @@
 *
 * connects to database
 */
-
+function get_db() {
 try {
 $url = getenv('DATABASE_URL');
 
@@ -26,5 +26,5 @@ catch (PDOException $ex) {
 }
 
 return $db;
-
+}
 ?>
