@@ -1,6 +1,6 @@
 <?php
-   require("dbConnect.php");
-   ini_set('display_errors', 1);
+   //require("dbConnect.php");
+   //ini_set('display_errors', 1);
 ?>
 <!DOCTYPE html>
 <html lang="en-us">
