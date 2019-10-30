@@ -60,7 +60,7 @@ $db = get_db();
 	  				
 	  $statement = $db->prepare($query);
 	  echo $query;
-	  $statement->bindValue(':event_date', $date);
+	  $statement->bindValue(':event_date', $date,PDO::PARAM_STR);
 	  $statement->bindValue(':title', $title);			
 	  $statement->execute();
 	  }
