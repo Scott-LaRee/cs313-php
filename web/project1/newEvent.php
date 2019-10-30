@@ -52,9 +52,11 @@ require "dbConnect.php";
 	  $data = htmlspecialchars($data);
 	  return $data;
       }
-	  
-	  $statement = $db->prepare("INSERT INTO events (event_date, event_title)
-					VALUES (:date, :title)");
+	  $query = "INSERT INTO events (event_date, event_title)
+					VALUES (:date, :title)";
+	  				
+	  $statement = $db->prepare($query);
+	  echo $query;
 	  $statement->bindValue(':event_date', $date);
 	  $statement->bindValue(':title', $title);			
 	  $statement->execute();
