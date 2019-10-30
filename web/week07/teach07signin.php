@@ -58,7 +58,7 @@ if (isset($_POST['txtUser']) && isset($_POST['txtPassword']))
 <body>
 
 <?php
-  if ($badLogn)
+  if ($badLogin)
   {
 	  echo "Incorrect username or password!<br/><br/>\n";
   }
