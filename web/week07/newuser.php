@@ -18,7 +18,7 @@
    require("dbConnect.php");
    //$db = get_db();
    
-   $query = 'INSERT INTO' users(username, password) VALUES(:username, :password);
+   $query = 'INSERT INTO users(username, password) VALUES(:username, :password)';
    $statement = $db->prepare($query);
    $statement->bindValue('username', $username);
    
