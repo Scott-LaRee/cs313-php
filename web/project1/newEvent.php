@@ -64,11 +64,7 @@ $db = get_db();
 	  $statement->bindValue(':date', $date,PDO::PARAM_STR);
 	  $statement->bindValue(':title', $title);			
 	  $statement->execute();
-	  }
-	  catch (PDOException $ex) {
-		  echo "ERROR executing statement Details: $ex";
-	      die();
-	  }
+	  
 	  
 	  $eventId = $db->lastInsertId("id_seq");
 	  echo "eventId = $eventId";
@@ -110,6 +106,11 @@ $db = get_db();
 	  $statement3->execute();
 
 	  echo "Event added";
+	  }
+	  catch (PDOException $ex) {
+		  echo "ERROR executing statement Details: $ex";
+	      die();
+	  }
 	?>  
    </div>
  
