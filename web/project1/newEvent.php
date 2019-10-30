@@ -43,8 +43,8 @@ $db = get_db();
       $day = validate($_POST['day_add']);
       $year = validate($_POST['year_add']);
 	  $title = "'" . validate($_POST['title']) . "'";
-      //$date = $year . "-" . $month . "-" . $day;
-	  $date = '2019-11-01';
+      $date = $year . "-" . $month . "-" . $day;
+	  //$date = '2019-11-01';
 	  echo "date = $date";
 	  echo "title = $title";
 	  
@@ -61,7 +61,7 @@ $db = get_db();
 	  				
 	  $statement = $db->prepare($query);
 	  echo $query;
-	  $statement->bindValue(':event_date', $date,PDO::PARAM_STR);
+	  $statement->bindValue(':date', $date,PDO::PARAM_STR);
 	  $statement->bindValue(':title', $title);			
 	  $statement->execute();
 	  }
