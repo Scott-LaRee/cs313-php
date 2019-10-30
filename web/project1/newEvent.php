@@ -42,7 +42,7 @@ $db = get_db();
 	  $month = validate($_POST['month_add']);
       $day = validate($_POST['day_add']);
       $year = validate($_POST['year_add']);
-	  $title = "'" . validate($_POST['title']) . "'";
+	  $title = validate($_POST['title']);
       $date = $year . "-" . $month . "-" . $day;
 	  //$date = '2019-11-01';
 	  echo "date = $date";
@@ -90,7 +90,7 @@ $db = get_db();
 		  $last = "'" . $name[1] . "'";
 		  
 		  echo "name = $first $last";
-		  $statement2 = $db->prepare('SELECT id FROM student WHERE student.student_first_name = :firts 
+		  $statement2 = $db->prepare('SELECT id FROM student WHERE student.student_first_name = :first 
 		  AND student.student_last_name = :last');
 		  $statement2->bindValue(':first', $first);
 		  $statement2->bindValue(':last', $last);
