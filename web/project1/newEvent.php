@@ -52,8 +52,8 @@ require "dbConnect.php";
 	  $data = htmlspecialchars($data);
 	  return $data;
       }
-	  $query = "INSERT INTO events (event_date, event_title)
-					VALUES (:date, :title)";
+	  $query = 'INSERT INTO events (event_date, event_title)
+					VALUES (:date, :title)';
 	  				
 	  $statement = $db->prepare($query);
 	  echo $query;
