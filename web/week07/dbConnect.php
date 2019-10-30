@@ -4,17 +4,11 @@
 *
 * connects to database
 */
-function get_db() {/*
-	$db = NULL;
-try {
-$dbUrl = getenv('DATABASE_URL');
 
-if (!isset($dbUrl) || empty($dbUrl)) {
-	$dbUrl = "postgres://ta_user:ta_pass@localhost:54332/login_test";
-	*/
-}
-try{
-$dbOpts =  parse_url($dbUrl);
+try {
+$url = getenv('DATABASE_URL');
+
+$dbOpts =  parse_url($url);
 
 $host = $dbOpts["host"];
 $port = $dbOpts["port"];
