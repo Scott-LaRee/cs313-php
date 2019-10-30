@@ -13,7 +13,7 @@ if (!isset($dbUrl) || empty($dbUrl)) {
 	$dbUrl = "postgres://ta_user:ta_pass@localhost:54332/login_test";
 	*/
 }
-
+try{
 $dbOpts =  parse_url($dbUrl);
 
 $host = $dbOpts["host"];
