@@ -40,10 +40,8 @@ ini_set('display_errors', 1);
  <div id="content">
   <div>
     <?php
-	  echo $_POST['first_view'];
-	  echo $_POST['last_view'];
-	  $first = validate($_POST['first_view']);
-      $last = validate($_POST['last_view']);
+	  $first = validate($_POST['first_update']);
+      $last = validate($_POST['last_update']);
       $year = validate($_POST['year_update']);
 	  $membership = validate($_POST['member_update']);
 	  $office = validate($_POST['office_update']);
@@ -55,8 +53,6 @@ ini_set('display_errors', 1);
 	  return $data;
       }
 	  
-	  echo $first;
-	  echo $last;
 	  if ($year != "")
 	  {
 		  echo "year = $year<br/>";
