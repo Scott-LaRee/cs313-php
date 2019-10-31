@@ -56,12 +56,14 @@ $db = get_db();
 	  if ($year != "")
 	  {
 		  echo "year = $year<br/>";
+		  echo "first = $first<br/>";
+		  echo "last = $last<br/>";
 		  try {
 			$query = 'UPDATE student SET grad_year = :year WHERE 
 						student.student_first_name = :first 
 						AND student.student_last_name = :last';
-			
 			$statement = $db->prepare($query);
+			echo $query;
 			$statement->bindValue(':year', $year,PDO::PARAM_STR);
 			$statement->bindValue(':first', $first);
 			$statement->bindValue(':last', $last);
