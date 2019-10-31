@@ -55,7 +55,7 @@ $db = get_db();
 	  
 	  if ($year != "")
 	  {
-		  echo "year = $year";
+		  echo "year = $year<br/>";
 		  try {
 			$query = 'UPDATE student SET grad_year = :year WHERE 
 						student.student_first_name = :first 
@@ -66,14 +66,13 @@ $db = get_db();
 			$statement->bindValue(':first', $first);
 			$statement->bindValue(':last', $last);
 			
-			$statement->execute();
-		  
-		  echo "end of year<br/>";
+			$statement->execute();		  
 		  }
 		  catch (PDOException $ex)
 		  {
 			  echo $sql . "<br>" . $ex->getMessage();
 		  }
+		  echo "end of year<br/>";
 	  }
 	  
 	  if ($membership != "")
@@ -89,6 +88,7 @@ $db = get_db();
 		  {
 			  echo $sql . "<br>" . $ex->getMessage();
 		  }
+		  echo "end of membership<br/>";
 	  }
 	  
 	  if ($office != "")
@@ -111,6 +111,7 @@ $db = get_db();
 		{
 			echo $sql . "<br>" . $ex->getMessage();
 		}
+		echo "end of office<br/>";
 	  }
 	  
 	?>  
