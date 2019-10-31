@@ -62,7 +62,7 @@ $db = get_db();
 						AND student.student_last_name = :last';
 			
 			$statement = $db->prepare($query);
-			$statement->bindValue(':year', $year);
+			$statement->bindValue(':year', $year,PDO::PARAM_STR);
 			$statement->bindValue(':first', $first);
 			$statement->bindValue(':last', $last);
 			
