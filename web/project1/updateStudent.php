@@ -46,9 +46,11 @@ $db = get_db();
 	  $office = validate($_POST['office_update']);
 	  	  
 	  function validate($data) {
+		  $echo $data . "<br/>";
 	  $data = trim($data);
 	  $data = stripslashes($data);
 	  $data = htmlspecialchars($data);
+	      $echo $data . "<br/";
 	  return $data;
       }
 	  
