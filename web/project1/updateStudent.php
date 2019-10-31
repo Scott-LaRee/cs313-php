@@ -81,10 +81,14 @@ ini_set('display_errors', 1);
 	  {
 		  try {
 		  echo "membership = $membership<br/>";
-		  $query = 'UPDATE student SET membership = ? WHERE 
-				student.student_first_name = ? AND student.student_last_name = ?';
+		  $query = 'UPDATE student SET membership = :membership WHERE 
+				student.student_first_name = :first 
+				AND student.student_last_name = :last';
 		  $statement = $pdo->prepare($query);
-		  $statement->execute([$membership, $first, $last]);
+		  $statement->bindValue(':membership', $membership);
+		  $statement->bindValue(':first', $first);
+		  $statement->bindValue(':last', $last);
+		  $statement->execute();
 		  }
 		  catch (PDOException $ex)
 		  {
