@@ -47,11 +47,11 @@ ini_set('display_errors', 1);
 	  $office = validate($_POST['office_update']);
 	  	  
 	  function validate($data) {
-		  $echo "beginnning data = $data <br/>";
+		  $echo $data;
 	  $data = trim($data);
 	  $data = stripslashes($data);
 	  $data = htmlspecialchars($data);
-	      $echo "ending data = $data <br/>";
+	      $echo $data;
 	  return $data;
       }
 	  
