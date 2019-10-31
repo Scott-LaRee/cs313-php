@@ -72,7 +72,7 @@ ini_set('display_errors', 1);
 		  }
 		  catch (PDOException $ex)
 		  {
-			  echo $sql . "<br>" . $ex->getMessage();
+			  echo $query . "<br>" . $ex->getMessage();
 		  }
 		  echo "end of year<br/>";
 	  }
@@ -81,14 +81,14 @@ ini_set('display_errors', 1);
 	  {
 		  try {
 		  echo "membership = $membership<br/>";
-		  $sql = 'UPDATE student SET membership = ? WHERE 
+		  $query = 'UPDATE student SET membership = ? WHERE 
 				student.student_first_name = ? AND student.student_last_name = ?';
-		  $stmt = $pdo->prepare($sql);
-		  $stmt->execute([$year, $first, $last]);
+		  $statement = $pdo->prepare($query);
+		  $statement->execute([$membership, $first, $last]);
 		  }
 		  catch (PDOException $ex)
 		  {
-			  echo $sql . "<br>" . $ex->getMessage();
+			  echo $query. "<br>" . $ex->getMessage();
 		  }
 		  echo "end of membership<br/>";
 	  }
@@ -98,13 +98,17 @@ ini_set('display_errors', 1);
 		  echo "office = $office<br/>";
 		try
 		{
-		  /*$statement = $db->prepare('UPDATE student SET office = :office WHERE 
-						student.student_first_name = :first AND student.student_last_name = :last');
-	  */
-		  $sql = "UPDATE student SET office = 'pres' WHERE 
+		  $query = 'UPDATE student SET office = :office WHERE 
+						student.student_first_name = :first 
+						AND student.student_last_name = :last';
+	  
+		  /*$sql = "UPDATE student SET office = 'pres' WHERE 
 				student.student_first_name = 'John' AND
-				student.student_last_name = 'Doe'";
-		  $statement = $db->prepare($sql);
+				student.student_last_name = 'Doe'";*/
+		  $statement = $db->prepare($query);
+		  $statement->bindValue(':office', $office);
+		  $statement->bindValue(':first', $first);
+		  $statement->bindValue(':last', $last);
 		  
 		  $statement->execute();
 		  
