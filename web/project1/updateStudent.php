@@ -84,7 +84,7 @@ ini_set('display_errors', 1);
 		  $query = 'UPDATE student SET membership = :membership WHERE 
 				student.student_first_name = :first 
 				AND student.student_last_name = :last';
-		  $statement = $pdo->prepare($query);
+		  $statement = $db->prepare($query);
 		  $statement->bindValue(':membership', $membership);
 		  $statement->bindValue(':first', $first);
 		  $statement->bindValue(':last', $last);
