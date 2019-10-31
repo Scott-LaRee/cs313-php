@@ -55,6 +55,7 @@ $db = get_db();
 	  
 	  if ($year != "")
 	  {
+		  echo "year = $year";
 		  try {
 			$query = 'UPDATE student SET grad_year = :year WHERE 
 						student.student_first_name = :first 
@@ -67,7 +68,7 @@ $db = get_db();
 			
 			$statement->execute();
 		  
-		  echo "end of year";
+		  echo "end of year<br/>";
 		  }
 		  catch (PDOException $ex)
 		  {
@@ -77,6 +78,7 @@ $db = get_db();
 	  
 	  if ($membership != "")
 	  {
+		  echo "membership = $membership<br/>";
 		  $sql = 'UPDATE student SET membership = ? WHERE 
 				student.student_first_name = ? AND student.student_last_name = ?';
 		  $stmt = $pdo->prepare($sql);
@@ -85,17 +87,19 @@ $db = get_db();
 	  
 	  if ($office != "")
 	  {
+		  echo "office = $office<br/>";
 		try
 		{
+		  /*$statement = $db->prepare('UPDATE student SET office = :office WHERE 
+						student.student_first_name = :first AND student.student_last_name = :last');
+	  */
 		  $sql = "UPDATE student SET office = 'pres' WHERE 
 				student.student_first_name = 'John' AND
 				student.student_last_name = 'Doe'";
 		  $statement = $db->prepare($sql);
 		  
 		  $statement->execute();
-		  /*$statement = $db->prepare('UPDATE student SET office = :office WHERE 
-						student.student_first_name = :first AND student.student_last_name = :last');
-	  */
+		  
 		}
 		catch (PDOException $ex)
 		{
