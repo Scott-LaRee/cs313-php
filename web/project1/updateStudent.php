@@ -1,6 +1,7 @@
 <?php
 require "dbConnect.php";
 $db = get_db();
+ini_set('display_errors', 1);
 ?>
 <!DOCTYPE HTML>
 <html lang="en-us">
