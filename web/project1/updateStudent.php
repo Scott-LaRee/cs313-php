@@ -78,11 +78,17 @@ $db = get_db();
 	  
 	  if ($membership != "")
 	  {
+		  try {
 		  echo "membership = $membership<br/>";
 		  $sql = 'UPDATE student SET membership = ? WHERE 
 				student.student_first_name = ? AND student.student_last_name = ?';
 		  $stmt = $pdo->prepare($sql);
 		  $stmt->execute([$year, $first, $last]);
+		  }
+		  catch (PDOException $ex)
+		  {
+			  echo $sql . "<br>" . $ex->getMessage();
+		  }
 	  }
 	  
 	  if ($office != "")
