@@ -38,7 +38,7 @@ ini_set('display_errors', 1);
    <?php
      try
 	 {
-	   $statement = $db->prepare('Select id, meeting_date FROM meetings');
+	   $statement = $db->prepare('Select * FROM meetings');
 	   $statement->execute();
 	   
 	   echo "<select name='date_view' id ='date_view'>";
