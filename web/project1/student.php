@@ -41,8 +41,8 @@
    </form>
    
    <h1>Add New Student</h1>
-   <p>* COMING SOON *</p>
-   <form name="new_student">
+
+   <form name="new_student" action="newStudent.php" method="POST">
      <label for="first_add">First Name</label>
      <input type="text" name="first_add" id="firts"><br/>
      <label for="last_add">Last Name</label>
