@@ -57,7 +57,7 @@ ini_set('display_errors', 1);
 		print "<br/>";
 		print "Name: " . $row['student_first_name'] . '' . $row['student_last_name'] . "<br/>";
 		print "Graduation year: " . $row['grad_year'] . "<br/>";
-		if ($row['membership' != "") 
+		if ($row['membership'] != "") 
 		{
 			print 'Membership Level: ' . $row['membership'] . "<br/>";
 		}
