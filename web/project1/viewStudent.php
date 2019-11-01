@@ -55,14 +55,29 @@ ini_set('display_errors', 1);
 	foreach($db->query($sql) as $row) 
 	{
 		print "<br/>";
-		print $row['student_first_name'] . '-' . $row['student_last_name'];
-		print "-" . $row['grad_year'] . '-' . $row['membership'];
-		print "-" . $row['office'] . '<br/>';
+		print "Name: " . $row['student_first_name'] . '' . $row['student_last_name'] . "<br/>";
+		print "Graduation year: " . $row['grad_year'] . "<br/>";
+		if ($row['membership' != "") 
+		{
+			print 'Membership Level: ' . $row['membership'] . "<br/>";
+		}
+		else
+		{
+			print 'Has not paid for membership';
+		}
+		if ($row['office'] != "")
+		{
+			print "Office Held: " . $row['office'] . '<br/>';
+		}
+		else
+		{
+			print "Does not hold office <br/>";
+		}
 	}
 
     $db->exec($sql);
 	
-	echo $db;
+	//echo $db;
 	} 
   catch (PDOException $ex)
   {
