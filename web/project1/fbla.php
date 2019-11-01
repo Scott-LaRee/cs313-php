@@ -10,8 +10,7 @@
 <body>
    <div id="page">
   <div id="head">
-   <header>
-    
+   <header>  
    <div id="pageHead">
     <h1>FBLA</h1>
    </div>

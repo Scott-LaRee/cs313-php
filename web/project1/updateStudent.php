@@ -20,23 +20,14 @@ ini_set('display_errors', 1);
    <div id="pageHead">
     <h1>UPDATE STUDENT</h1>
    </div>
-   <div id="menuBar">
-    <ul id="menuBarList">
-     <li class="menuBarItem"><a href="fbla.html">HOME</a></li>
-     <li class="menuBarItem"><a href="student.html">STUDENT INFO</a></li>
-     <li class="menuBarItem"><a href="meetings.html">MEETINGS</a></li>
-	 <li class="menuBarItem"><a href="events.php">EVENTS</a></li>
-    </ul>
-   </div>
+   <?php
+     include_once('menuBar.php');
+   ?>
    </header>
  </div>
- <div id="sideBar">
-<div id="sideBarList">
-    <div class="sideBarItem"><h3><a href="student.html">STUDENT</a></h3></div>
-    <div class="sideBarItem"><h3><a href="meetings.html">MEETINGS</a></h3></div>
-    <div class="sideBarItem"><h3><a href ="events.php">EVENTS</a></h3></div>
-  </div>
-</div>
+   <?php
+     include_once('sideBar.php');
+   ?>
  <div id="content">
   <div>
     <?php
@@ -55,15 +46,11 @@ ini_set('display_errors', 1);
 	  
 	  if ($year != "")
 	  {
-		  echo "year = $year<br/>";
-		  echo "first = $first<br/>";
-		  echo "last = $last<br/>";
 		  try {
 			$query = 'UPDATE student SET grad_year = :year WHERE 
 						student.student_first_name = :first 
 						AND student.student_last_name = :last';
 			$statement = $db->prepare($query);
-			echo $query;
 			$statement->bindValue(':year', $year,PDO::PARAM_STR);
 			$statement->bindValue(':first', $first);
 			$statement->bindValue(':last', $last);
@@ -74,13 +61,11 @@ ini_set('display_errors', 1);
 		  {
 			  echo $query . "<br>" . $ex->getMessage();
 		  }
-		  echo "end of year<br/>";
 	  }
 	  
 	  if ($membership != "")
 	  {
 		  try {
-		  echo "membership = $membership<br/>";
 		  $query = 'UPDATE student SET membership = :membership WHERE 
 				student.student_first_name = :first 
 				AND student.student_last_name = :last';
@@ -94,21 +79,15 @@ ini_set('display_errors', 1);
 		  {
 			  echo $query. "<br>" . $ex->getMessage();
 		  }
-		  echo "end of membership<br/>";
 	  }
 	  
 	  if ($office != "")
 	  {
-		  echo "office = $office<br/>";
 		try
 		{
 		  $query = 'UPDATE student SET office = :office WHERE 
 						student.student_first_name = :first 
 						AND student.student_last_name = :last';
-	  
-		  /*$sql = "UPDATE student SET office = 'pres' WHERE 
-				student.student_first_name = 'John' AND
-				student.student_last_name = 'Doe'";*/
 		  $statement = $db->prepare($query);
 		  $statement->bindValue(':office', $office);
 		  $statement->bindValue(':first', $first);
@@ -121,7 +100,6 @@ ini_set('display_errors', 1);
 		{
 			echo $sql . "<br>" . $ex->getMessage();
 		}
-		echo "end of office<br/>";
 	  }
 	  
 	?>  

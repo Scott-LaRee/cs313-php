@@ -6,6 +6,7 @@
 
 require "dbConnect.php";
 $db = get_db();
+ini_set('display_errors', 1);
 ?>
 <!DOCTYPE HTML>
 <html lang="en-us">
@@ -24,27 +25,60 @@ $db = get_db();
    <div id="pageHead">
     <h1>MEETING INFO</h1>
    </div>
-   <div id="menuBar">
-    <ul id="menuBarList">
-     <li class="menuBarItem"><a href="fbla.html">HOME</a></li>
-     <li class="menuBarItem"><a href="student.html">STUDENT INFO</a></li>
-     <li class="menuBarItem"><a href="meetings.html">MEETINGS</a></li>
-	 <li class="menuBarItem"><a href="events.php">EVENTS</a></li>
-    </ul>
-   </div>
+   <?php
+     include_once('menuBar.php');
+   ?>
    </header>
  </div>
- <div id="sideBar">
-<div id="sideBarList">
-    <div class="sideBarItem"><h3><a href="student.html">STUDENT</a></h3></div>
-    <div class="sideBarItem"><h3><a href="meetings.html">MEETINGS</a></h3></div>
-    <div class="sideBarItem"><h3><a href ="events.php">EVENTS</a></h3></div>
-  </div>
-</div>
+   <?php
+     include_once('sideBar.php');
+   ?>
  <div id="content">
   <div>
     <?php
+      $date = "'" . validate($_POST['date_view']) . "'";
+  function validate($data) {
+	  $data = trim($data);
+	  $data = stripslashes($data);
+	  $data = htmlspecialchars($data);
+	  return $data;
+  }
+  
+  try {
+    $query = "SELECT * FROM meetings WHERE meetings.meeting_date = $date";
+	
+	foreach($db->query($query) as $row) 
+	{
+		print "<br/>";
+		print "<h4>Attendace for " . $row['meeting_type'] . " meeting on " . $row['meeting_date'];
+		/*print $row['event_date'] . '-' . $row['event_title'];*/
+		$id = $row['id'];
+		
+		$sql2 = "SELECT student_first_name, student_last_name FROM student
+				INNER JOIN meeting_attendance
+					ON student.id = meeting_attendance.student_id
+				INNER JOIN meetings
+					ON meeting_attendance.meeting_id = meetings.id
+				WHERE
+					meetings.id = $id";
+		print "<p>";
+		foreach($db->query($sql2) as $row2)
+		{
+			print $row2['student_first_name'] . " " .
+					$row2['student_last_name'] . "<br/>";
+		}
+		print "</p>";
+	}
 
+    $db->exec($query);	
+	
+	echo $db;
+	} 
+  catch (PDOException $ex)
+  {
+	  echo $sql . "<br>" . $ex->getMessage();
+  }
+  /*
   $month = validate($_POST['month_view']);
   $day = validate($_POST['day_view']);
   $year = validate($_POST['year_view']);

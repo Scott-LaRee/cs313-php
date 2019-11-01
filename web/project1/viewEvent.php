@@ -6,6 +6,7 @@
 
 require "dbConnect.php";
 $db = get_db();
+ini_set('display_errors', 1);
 ?>
 <!DOCTYPE HTML>
 <html lang="en-us">
@@ -24,32 +25,17 @@ $db = get_db();
    <div id="pageHead">
     <h1>EVENT INFO</h1>
    </div>
-   <div id="menuBar">
-    <ul id="menuBarList">
-     <li class="menuBarItem"><a href="fbla.html">HOME</a></li>
-     <li class="menuBarItem"><a href="student.html">STUDENT INFO</a></li>
-     <li class="menuBarItem"><a href="meetings.html">MEETINGS</a></li>
-	 <li class="menuBarItem"><a href="events.php">EVENTS</a></li>
-    </ul>
-   </div>
+   <?php
+     include_once('menuBar.php');
+   ?>
    </header>
  </div>
- <div id="sideBar">
-<div id="sideBarList">
-    <div class="sideBarItem"><h3><a href="student.html">STUDENT</a></h3></div>
-    <div class="sideBarItem"><h3><a href="meetings.html">MEETINGS</a></h3></div>
-    <div class="sideBarItem"><h3><a href ="events.php">EVENTS</a></h3></div>
-  </div>
-</div>
+   <?php
+     include_once('sideBar.php');
+   ?>
  <div id="content">
   <div>
     <?php
-	/*$month = validate($_POST['month_view']);
-    $day = validate($_POST['day_view']);
-    $year = validate($_POST['year_view']);
-	$title = "'" . validate($_POST['title_view']);
-  */
-    //$date = "'" . $year . "-" . $month . "-" . $day . "'";
     $date = "'" . validate($_POST['date_view']) . "'";
   function validate($data) {
 	  $data = trim($data);

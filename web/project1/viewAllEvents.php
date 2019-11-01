@@ -6,6 +6,7 @@
 
 require "dbConnect.php";
 $db = get_db();
+ini_set('display_errors', 1);
 ?>
 <!DOCTYPE HTML>
 <html lang="en-us">
@@ -24,23 +25,14 @@ $db = get_db();
    <div id="pageHead">
     <h1>VIEW ALL EVENTS</h1>
    </div>
-   <div id="menuBar">
-    <ul id="menuBarList">
-     <li class="menuBarItem"><a href="fbla.html">HOME</a></li>
-     <li class="menuBarItem"><a href="student.html">STUDENT INFO</a></li>
-     <li class="menuBarItem"><a href="meetings.html">MEETINGS</a></li>
-	 <li class="menuBarItem"><a href="events.php">EVENTS</a></li>
-    </ul>
-   </div>
+   <?php
+     include_once('menuBar.php');
+   ?>
    </header>
  </div>
- <div id="sideBar">
-<div id="sideBarList">
-    <div class="sideBarItem"><h3><a href="student.html">STUDENT</a></h3></div>
-    <div class="sideBarItem"><h3><a href="meetings.html">MEETINGS</a></h3></div>
-    <div class="sideBarItem"><h3><a href ="events.php">EVENTS</a></h3></div>
-  </div>
-</div>
+   <?php
+     include_once('sideBar.php');
+   ?>
  <div id="content">
   <div>
     <?php
