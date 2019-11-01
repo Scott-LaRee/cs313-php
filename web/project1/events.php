@@ -46,8 +46,9 @@ ini_set('display_errors', 1);
 	     $id = $row['id'];
 		 $date = $row['event_date'];
 		 $title = $row['event_title'];
+		 $option = $title . " on " . $date;
 		 
-		 echo "<option value='$date'>$date - $title</option>";
+		 echo "<option value='$date'>$option</option>";
 	   }
 	   echo "</select><br/>";
 	 }
