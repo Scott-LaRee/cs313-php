@@ -1,6 +1,7 @@
 <?php
 require "dbConnect.php";
 $db = get_db();
+ini_set('display_errors', 1);
 ?>
 <!DOCTYPE HTML>
 <html lang="en-us">
@@ -19,23 +20,14 @@ $db = get_db();
    <div id="pageHead">
     <h1>FBLA EVENTS</h1>
    </div>
-   <div id="menuBar">
-    <ul id="menuBarList">
-     <li class="menuBarItem"><a href="fbla.html">HOME</a></li>
-     <li class="menuBarItem"><a href="student.html">STUDENT INFO</a></li>
-     <li class="menuBarItem"><a href="meetings.html">MEETINGS</a></li>
-	 <li class="menuBarItem"><a href="events.php">EVENTS</a></li>
-    </ul>
-   </div>
+   <?php
+     include_once('menuBar.php');
+   ?>
    </header>
  </div>
- <div id="sideBar">
-<div id="sideBarList">
-    <div class="sideBarItem"><h3><a href="student.html">STUDENT</a></h3></div>
-    <div class="sideBarItem"><h3><a href="meetings.html">MEETINGS</a></h3></div>
-    <div class="sideBarItem"><h3><a href ="events.php">EVENTS</a></h3></div>
-  </div>
-</div>
+   <?php
+     include_once('sideBar.php');
+   ?>
  <div id="content">
   <div>
     <?php
@@ -44,10 +36,7 @@ $db = get_db();
       $year = validate($_POST['year_add']);
 	  $title = validate($_POST['title']);
       $date = $year . "-" . $month . "-" . $day;
-	  //$date = '2019-11-01';
-	  echo "date = $date";
-	  echo "title = $title";
-	  
+	  	  
 	  function validate($data) {
 	  $data = trim($data);
 	  $data = stripslashes($data);
@@ -67,17 +56,12 @@ $db = get_db();
 	  
 	  
 	  $eventId = $db->lastInsertId("events_id_seq");
-	  echo "eventId = $eventId";
-	  
+	 	  
 	  $text = validate($_POST['students']);
-	  echo "text = $text";
+	  
 	  /*put each line of text area as an element of an array*/
 	  $students = explode("\n", $text); 
 	  
-	  foreach ($students as $info)
-	  {
-		  echo "name = $info <br/>";
-	  }
 	  $studentId = 0;
 	  foreach($students as $student)
 	  {
@@ -85,7 +69,6 @@ $db = get_db();
 		  $first = $name[0];
 		  $last = $name[1];
 		  
-		  echo "name = $first $last";
 		  $statement2 = $db->prepare('SELECT id FROM student WHERE student.student_first_name = :first 
 		  AND student.student_last_name = :last');
 		  $statement2->bindValue(':first', $first);
@@ -94,8 +77,7 @@ $db = get_db();
 		  
 		  $row = $statement2->fetch(PDO::FETCH_ASSOC);
 		  $studentId = $row['id'];	
-          echo "studentId = $studentId";		  
-	  }
+          	  
 	  
 	  $statement3 = $db->prepare("INSERT INTO event_attendance (event_id, student_id)
 	                              VALUES (:eventId, :studentId)");
@@ -104,6 +86,7 @@ $db = get_db();
 	  $statement3->bindValue(':studentId', $studentId);
 	  
 	  $statement3->execute();
+	  }
 
 	  echo "Event added";
 	  }
