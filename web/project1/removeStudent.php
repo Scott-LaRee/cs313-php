@@ -7,7 +7,7 @@ ini_set('display_errors', 1);
 <html lang="en-us">
 <head>
 <meta charset="utf-8">
-<title>Add Student</title>
+<title>Remove Student</title>
 <link id="styleOfPage" type="text/css" rel="StyleSheet" 
 	href="project1.css" />
 
@@ -18,7 +18,7 @@ ini_set('display_errors', 1);
    <header>
     
    <div id="pageHead">
-    <h1>Add New Student</h1>
+    <h1>Remove Student</h1>
    </div>
    <?php
      include_once('menuBar.php');
@@ -34,10 +34,8 @@ ini_set('display_errors', 1);
     <?php
 	  $first = validate($_POST['first_add']);
       $last = validate($_POST['last_add']);
-      $year = validate($_POST['grad_year']);
-	  $membership = validate($_POST['membership']);
-      $office = validate($_POST['office']);
-	    
+      $studentId = 0;
+	  
 	  function validate($data) {
 	  $data = trim($data);
 	  $data = stripslashes($data);
@@ -46,20 +44,21 @@ ini_set('display_errors', 1);
       }
 	  
 	  try {
-	  $query = 'INSERT INTO student (student_first_name,
-				student_last_name, grad_year, membership, office)
-					VALUES (:first, :last, :grad, :member, :office)';
+		  /*I chose to not remove attendance records because
+		  even if a student was removed it does not mean they didn't
+		  attend events and meetings.*/
+	  $query = 'DELETE FROM student WHERE
+				student_first_name = :first AND
+				student_last_name = :last';
 	  				
 	  $statement = $db->prepare($query);
 
 	  $statement->bindValue(':first', $first);
 	  $statement->bindValue(':last', $last);
-	  $statement->bindValue(':grad', $year);
-	  $statement->bindValue(':member', $membership);
-	  $statement->bindValue(':office', $office);
-	  $statement->execute();
 	 
-	  echo "Student $first $last added";
+	  $statement->execute();
+	  
+	  echo "$first $last removed from student list";
 	  }
 	  catch (PDOException $ex) {
 		  echo "ERROR executing statement Details: $ex";

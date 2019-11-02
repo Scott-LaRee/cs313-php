@@ -28,9 +28,9 @@
    <h1>View Student Info</h1>
    <form name="view_student" action="viewStudent.php" method="POST">
      <label for="first_view">First Name</label>
-     <input type="text" name="first_view" id="firts"><br/>
+     <input type="text" name="first_view" id="firts">required<br/>
      <label for="last_view">Last Name</label>
-     <input type="text" name="last_view" id="last"><br/>
+     <input type="text" name="last_view" id="last">required<br/>
      <input type="submit" value="View Student">
    </form>
    <div id="view_div"></div>
@@ -44,15 +44,25 @@
 
    <form name="new_student" action="newStudent.php" method="POST">
      <label for="first_add">First Name</label>
-     <input type="text" name="first_add" id="firts"><br/>
+     <input type="text" name="first_add" id="first_add">required<br/>
      <label for="last_add">Last Name</label>
-     <input type="text" name="last_add" id="last"><br/>
+     <input type="text" name="last_add" id="last_add">required<br/>
      <label for="grad_yr">Graduation year</label>
-     <input type="text" name="grad_year" id="grad_yr"><br/>
+     <input type="text" name="grad_year" id="grad_year"><br/>
      <label for="membership">Membership Paid</label>
-     <input type="text" name="membership" id="membership"><br/>
+	 <select name="membership" id="membership">
+	   <option value="national">National</option>
+	   <option value="local">Local</option>
+	 </select>
+     <!--<input type="text" name="membership" id="membership">--><br/>
      <label for"office">Office held<label>
-     <input type="text" name="office" id="office"><br/>
+	 <select name="office" id="office">
+	   <option value="president">President</option>
+	   <option value="vice-pres">Vice-Pres</option>
+	   <option value="treasurer">Treasurer</option>
+	   <option value="secretary">Secretary</option>
+	 </select>
+     <!--<input type="text" name="office" id="office">--><br/>
      <input type="submit" value="Add Student">
    </form>
    <div id="add_div"></div>
@@ -60,17 +70,38 @@
    <h1>Update Student</h1>
    <form name="update" action="updateStudent.php" method="POST">
      <label for="first_update">First Name</label>
-	 <input type="text" name="first_update" id="first_update"><br/>
+	 <input type="text" name="first_update" id="first_update">required<br/>
 	 <label for="last_update">Last Name</label>
-	 <input type="text" name="last_update" id="last_update"><br/>
+	 <input type="text" name="last_update" id="last_update">required<br/>
 	 <label for="year_update">Graduation year</label>
 	 <input type="text" name="year_update" id="year_update"><br/>
 	 <label for="member_update">Membership Paid</label>
-	 <input type="text" name="member_update" id="member_update"><br/>
+	 <select name="member_update" id="member_update">
+	   <option value="national">National</option>
+	   <option value="local">Local</option>
+	 </select>
+	 <!--<input type="text" name="member_update" id="member_update">--><br/>
 	 <label for="office_update">Office held<label>
-	 <input type="text" name="office_update" id="office_update"><br/>
+	 <select name="office_update" id="office_update">
+	   <option value="president">President</option>
+	   <option value="vice-pres">Vice-Pres</option>
+	   <option value="treasurer">Treasurer</option>
+	   <option value="secretary">Secretary</option>
+	 </select>
+     <!--<input type="text" name="office_update" id="office_update">--><br/>
 	 <input type="submit" value="Update Student"><br/>
    </form>
+   <div id="update_div"></div>
+   
+   <h1>Remove Studnet</h1>
+   <form name="remove" action="removeStudent.php" method="POST">
+     <label for="first_remove">First Name</label>
+	 <input type="text" name="first_remove" id="first_remove">required<br/>
+	 <label for="last_remove">Last Name</label>
+	 <input type="text" name="last_remove" id="last_remove">required<br/>
+	 <input type="submit" value="Remove Student">
+   </form>
+   <div id="remove_div"></div>
    </div>
  
  </div>

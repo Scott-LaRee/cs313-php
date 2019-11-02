@@ -81,8 +81,7 @@ ini_set('display_errors', 1);
 		  }
 	  }
 	  
-	  if ($office != "")
-	  {
+	  
 		try
 		{
 		  $query = 'UPDATE student SET office = :office WHERE 
@@ -100,7 +99,7 @@ ini_set('display_errors', 1);
 		{
 			echo $sql . "<br>" . $ex->getMessage();
 		}
-	  }
+	  
 	  
 	?>  
    </div>
