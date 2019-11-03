@@ -44,8 +44,24 @@ ini_set('display_errors', 1);
 	  return $data;
       }
 	  
-	  if ($year != "")
-	  {
+	  $studentId = 0;
+	  
+	  try
+		{
+		  $statement = $db->prepare('SELECT id FROM student WHERE student.student_first_name = :first 
+							AND student.student_last_name = :last');
+		  $statement->bindValue(':first', $first);
+		  $statement->bindValue(':last', $last);
+		  $statement->execute();
+		  
+          $row = $statement->fetch(PDO::FETCH_ASSOC);
+	      $studentId = $row['id'];
+	  
+	      if ($studentId != 0)
+	      {
+		  
+	      if ($year != "")
+	      {
 		  try {
 			$query = 'UPDATE student SET grad_year = :year WHERE 
 						student.student_first_name = :first 
@@ -80,10 +96,7 @@ ini_set('display_errors', 1);
 			  echo $query. "<br>" . $ex->getMessage();
 		  }
 	  }
-	  
-	  
-		try
-		{
+
 		  $query = 'UPDATE student SET office = :office WHERE 
 						student.student_first_name = :first 
 						AND student.student_last_name = :last';
@@ -93,6 +106,7 @@ ini_set('display_errors', 1);
 		  $statement->bindValue(':last', $last);
 		  
 		  $statement->execute();
+	  }
 		  
 		}
 		catch (PDOException $ex)
@@ -100,7 +114,7 @@ ini_set('display_errors', 1);
 			echo $sql . "<br>" . $ex->getMessage();
 		}
 	  
-	  
+	  echo $first . " " . $last . " information updated";
 	?>  
    </div>
  

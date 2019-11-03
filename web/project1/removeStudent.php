@@ -32,8 +32,8 @@ ini_set('display_errors', 1);
   <div>
   
     <?php
-	  $first = validate($_POST['first_add']);
-      $last = validate($_POST['last_add']);
+	  $first = validate($_POST['first_remove']);
+      $last = validate($_POST['last_remove']);
       $studentId = 0;
 	  
 	  function validate($data) {
@@ -47,19 +47,35 @@ ini_set('display_errors', 1);
 		  /*I chose to not remove attendance records because
 		  even if a student was removed it does not mean they didn't
 		  attend events and meetings.*/
-	  $query = 'DELETE FROM student WHERE
+		  
+	  $statement = $db->prepare('SELECT id FROM student WHERE student.student_first_name = :first 
+							AND student.student_last_name = :last');
+	  $statement->bindValue(':first', $first);
+      $statement->bindValue(':last', $last);
+	  $statement->execute();
+		  
+      $row = $statement->fetch(PDO::FETCH_ASSOC);
+	  $studentId = $row['id'];
+	  
+	  if ($studentId != 0)
+	  {
+	    $query = 'DELETE FROM student WHERE
 				student_first_name = :first AND
 				student_last_name = :last';
 	  				
-	  $statement = $db->prepare($query);
+	    $statement2 = $db->prepare($query);
 
-	  $statement->bindValue(':first', $first);
-	  $statement->bindValue(':last', $last);
+	    $statement2->bindValue(':first', $first);
+	    $statement2->bindValue(':last', $last);
 	 
-	  $statement->execute();
+	    $statement2->execute();
 	  
-	  echo "$first $last removed from student list";
-	  }
+	    echo "$first $last removed from student list";
+	    }
+		else
+		{
+			echo "student $first $last not found";
+		}
 	  catch (PDOException $ex) {
 		  echo "ERROR executing statement Details: $ex";
 	      die();
