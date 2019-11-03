@@ -7,7 +7,7 @@ ini_set('display_errors', 1);
 <html lang="en-us">
 <head>
 <meta charset="utf-8">
-<title>Remove Meeting</title>
+<title>Update Meeting</title>
 <link id="styleOfPage" type="text/css" rel="StyleSheet" 
 	href="project1.css" />
 
@@ -18,7 +18,7 @@ ini_set('display_errors', 1);
    <header>
     
    <div id="pageHead">
-    <h1>Remove Meeting</h1>
+    <h1>Update Meeting</h1>
    </div>
    <?php
      include_once('menuBar.php');
@@ -89,6 +89,9 @@ ini_set('display_errors', 1);
 			$first = $name[0];
 			$last = $name[1];
 		  
+		    echo " first = $first<br/>";
+			echo "last = $last<br/>";
+			echo "id = $studentId<br/>";
 			$statement2 = $db->prepare('SELECT id FROM student WHERE student.student_first_name = :first 
 						AND student.student_last_name = :last');
 			$statement2->bindValue(':first', $first);
@@ -103,6 +106,8 @@ ini_set('display_errors', 1);
 		      include_once('studentNotFound.php');     
 			}
 	  
+			echo "meetingId = $meetingId<br/>";
+			echo "studentId = $studentId<br/>";
 			$statement3 = $db->prepare("INSERT INTO meeting_attendance (meeting_id, student_id)
 	                              VALUES (:meetingId, :studentId)");
 	
