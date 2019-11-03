@@ -72,35 +72,12 @@ ini_set('display_errors', 1);
 
     $db->exec($sql);
 	
-	//echo $db;
 	} 
   catch (PDOException $ex)
   {
 	  echo $sql . "<br>" . $ex->getMessage();
   }
   
-  /*This works*//*
-  try {
-    $sql = "SELECT * FROM student WHERE student.student_first_name = 'John'
-		AND student.student_last_name = 'Doe'";
-	
-	foreach($db->query($sql) as $row) 
-	{
-		print "<br/>";
-		print $row['student_first_name'] . '-' . $row['student_last_name'];
-		print "-" . $row['grad_year'] . '-' . $row['membership'];
-		print "-" . $row['office'] . '<br/>';
-	}
-
-    $db->exec($sql);
-	
-	echo $db;
-	} 
-  catch (PDOException $ex)
-  {
-	  echo $sql . "<br>" . $ex->getMessage();
-  }
-  */
   ?>
   </div>
  

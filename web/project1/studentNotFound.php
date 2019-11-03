@@ -7,7 +7,7 @@
   $sql->bindValue(':last', $last);
   $sql->execute();
 	 
-  echo "Student $first $last added";
+  echo "Student $first $last added to database";
 				  
   $studentId = $db->lastInsertId("student_id_seq");	 
 ?>

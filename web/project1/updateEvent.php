@@ -97,14 +97,11 @@ ini_set('display_errors', 1);
 		  
 			$row = $statement2->fetch(PDO::FETCH_ASSOC);
 			$studentId = $row['id'];	
-          	  
-			  echo "studentId = $studentId<br/>";
-			  
+          	  			  
 			if ($studentId == 0)
 			{				  
 		      include_once('studentNotFound.php');     
 			}
-			echo "studentId = $studentId<br/>";
 			
 			$statement3 = $db->prepare("INSERT INTO event_attendance (event_id, student_id)
 	                              VALUES (:eventId, :studentId)");
