@@ -163,7 +163,7 @@ ini_set('display_errors', 1);
 		 $date = $row['meeting_date'];
 		 $type = $row['meeting_type'];
 		 
-		 echo "<option value='$date'>$date - $type</option>";
+		 echo "<option value='$id'>$date - $type</option>";
 	   }
 	   echo "</select><br/>";
 	   
@@ -248,7 +248,7 @@ ini_set('display_errors', 1);
    <textarea name="students_update" id="students_update"></textarea><br/>
    <label for="students_remove">Remove Students</label>
    <textarea name="students_remove" id="students_remove"></textarea><br/>
-   <input type="submit" value="View Meeting">
+   <input type="submit" value="Update Meeting">
    </form>
    
    <h1>Remove Meeting</h1>
@@ -279,7 +279,7 @@ ini_set('display_errors', 1);
 	   die();
 	 }
    ?>
-   <input type="submit" value="View Meeting">
+   <input type="submit" value="Remove Meeting">
    </form>
    </div>
  
