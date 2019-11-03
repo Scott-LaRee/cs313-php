@@ -42,6 +42,7 @@ ini_set('display_errors', 1);
 	   $statement->execute();
 	   
 	   echo "<select name='date_view' id ='date_view'>";
+	   echo "<option value=""></option>";
 	   
 	   while($row = $statement->fetch(PDO::FETCH_ASSOC))
 	   {
@@ -72,6 +73,7 @@ ini_set('display_errors', 1);
    <form name="new_meeting" action="newMeeting.php" method="POST">
      <label for="month_add">Month</label>
    <select name="month_add" id="month_add">
+     <option value=""></option>
      <option value="01">Jan</option>
 	 <option value="02">Feb</option>
 	 <option value="03">Mar</option>
@@ -88,6 +90,7 @@ ini_set('display_errors', 1);
    
    <label for="day_add">Day</label>
    <select name="day_add" id="day_add">
+     <option value=""></option>
      <option value="01">01</option>
 	 <option value="02">02</option>
 	 <option value="03">03</option>
@@ -123,6 +126,7 @@ ini_set('display_errors', 1);
    
    <label for="year_add">Year</label>
    <select name="year_add" id="year_add">
+     <option value=""></option>
 	 <option value="2019">2019</option>
 	 <option value="2020">2020</option>
 	 <option value="2021">2021</option>
@@ -131,9 +135,10 @@ ini_set('display_errors', 1);
    
    <label for="type">Meeting Type</label>
    <select name="type" id="type">
+     <option value=""></option>
      <option value="General">General</option>
 	 <option value="Officer">Officer</option>
-   </select>
+   </select><br/>
    <label for="students">Students Present</label>
    <textarea name="students" id="students"></textarea><br/>
    <input type="submit" value="Add Meeting">
@@ -172,6 +177,7 @@ ini_set('display_errors', 1);
    <h3>What would you like to update?<h3>
    <label for="month_update">Month</label>
    <select name="month_update" id="month_update">
+     <option value=""></option>
      <option value="01">Jan</option>
 	 <option value="02">Feb</option>
 	 <option value="03">Mar</option>
@@ -188,6 +194,7 @@ ini_set('display_errors', 1);
    
    <label for="day_update">Day</label>
    <select name="day_update" id="day_update">
+     <option value=""></option>
      <option value="01">01</option>
 	 <option value="02">02</option>
 	 <option value="03">03</option>
@@ -223,6 +230,7 @@ ini_set('display_errors', 1);
    
    <label for="year_update">Year</label>
    <select name="year_update" id="year_update">
+     <option value=""></option>
 	 <option value="2019">2019</option>
 	 <option value="2020">2020</option>
 	 <option value="2021">2021</option>
@@ -231,9 +239,10 @@ ini_set('display_errors', 1);
    
    <label for="type_update">Meeting Type</label>
    <select name="type_update" id="type_update">
+     <option value=""></option>
      <option value="General">General</option>
 	 <option value="Officer">Officer</option>
-   </select>
+   </select><br/>
    <label for="students_update">Add Students</label>
    <textarea name="students_update" id="students_update"></textarea><br/>
    <label for="students_remove">Remove Students</label>
@@ -251,6 +260,7 @@ ini_set('display_errors', 1);
 	   $statement->execute();
 	   
 	   echo "<select name='remove_id' id ='remove_id'>";
+	   echo "<option value=""></option>";
 	   
 	   while($row = $statement->fetch(PDO::FETCH_ASSOC))
 	   {

@@ -57,6 +57,7 @@
      <!--<input type="text" name="membership" id="membership">--><br/>
      <label for"office">Office held<label>
 	 <select name="office" id="office">
+	   <option value=""></option>
 	   <option value="president">President</option>
 	   <option value="vice-pres">Vice-Pres</option>
 	   <option value="treasurer">Treasurer</option>
@@ -77,12 +78,14 @@
 	 <input type="text" name="year_update" id="year_update"><br/>
 	 <label for="member_update">Membership Paid</label>
 	 <select name="member_update" id="member_update">
+	   <option value=""></option>
 	   <option value="national">National</option>
 	   <option value="local">Local</option>
 	 </select>
 	 <!--<input type="text" name="member_update" id="member_update">--><br/>
 	 <label for="office_update">Office held<label>
 	 <select name="office_update" id="office_update">
+	   <option value=""></option>
 	   <option value="president">President</option>
 	   <option value="vice-pres">Vice-Pres</option>
 	   <option value="treasurer">Treasurer</option>
