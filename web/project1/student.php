@@ -1,3 +1,8 @@
+<?php
+require "dbConnect.php";
+$db = get_db();
+ini_set('display_errors', 1);
+?>
 <!DOCTYPE HTML>
 <html lang="en-us">
 <head>
@@ -26,14 +31,61 @@
  <div id="content">
   <div>
    <h1>View Student Info</h1>
-   <form name="view_student" action="viewStudent.php" method="POST">
+   <form name="view_student" action="student.php" method="POST">
      <label for="first_view">First Name</label>
      <input type="text" name="first_view" id="firts">required<br/>
      <label for="last_view">Last Name</label>
      <input type="text" name="last_view" id="last">required<br/>
      <input type="submit" value="View Student">
    </form>
-   <div id="view_div"></div>
+   <div id="view_div">
+   <?php
+	  $first = "'" . validate($_POST['first_view']) . "'";
+      $last = "'" . validate($_POST['last_view']) . "'";
+
+      function validate($data) {
+	    $data = trim($data);
+	    $data = stripslashes($data);
+	    $data = htmlspecialchars($data);
+	    return $data;
+      }
+  
+    try {
+      $sql = "SELECT * FROM student WHERE student.student_first_name = $first
+		AND student.student_last_name = $last";
+	
+	foreach($db->query($sql) as $row) 
+	{
+		print "<br/>";
+		print "Name: " . $row['student_first_name'] . '' . $row['student_last_name'] . "<br/>";
+		print "Graduation year: " . $row['grad_year'] . "<br/>";
+		if ($row['membership'] != "") 
+		{
+			print 'Membership Level: ' . $row['membership'] . "<br/>";
+		}
+		else
+		{
+			print 'Has not paid for membership';
+		}
+		if ($row['office'] != "")
+		{
+			print "Office Held: " . $row['office'] . '<br/>';
+		}
+		else
+		{
+			print "Does not hold office <br/>";
+		}
+	}
+
+    $db->exec($sql);
+	
+	} 
+  catch (PDOException $ex)
+  {
+	  echo $sql . "<br>" . $ex->getMessage();
+  }
+  ?>
+   </div>
    
    <h1>View All Students</h1>
    <form action="viewAllStudents.php">
@@ -48,7 +100,7 @@
      <label for="last_add">Last Name</label>
      <input type="text" name="last_add" id="last_add">required<br/>
      <label for="grad_yr">Graduation year</label>
-     <input type="text" name="grad_year" id="grad_year"><br/>
+     <input type="text" name="grad_year" id="grad_year">required<br/>
      <label for="membership">Membership Paid</label>
 	 <select name="membership" id="membership">
 	   <option value=""></option>
