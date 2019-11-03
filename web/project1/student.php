@@ -51,6 +51,7 @@
      <input type="text" name="grad_year" id="grad_year"><br/>
      <label for="membership">Membership Paid</label>
 	 <select name="membership" id="membership">
+	   <option value=""></option>
 	   <option value="national">National</option>
 	   <option value="local">Local</option>
 	 </select>

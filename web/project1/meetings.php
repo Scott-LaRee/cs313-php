@@ -42,7 +42,7 @@ ini_set('display_errors', 1);
 	   $statement->execute();
 	   
 	   echo "<select name='date_view' id ='date_view'>";
-	   echo "<option value=""></option>";
+	   echo '<option value=""></option>';
 	   
 	   while($row = $statement->fetch(PDO::FETCH_ASSOC))
 	   {
@@ -155,6 +155,7 @@ ini_set('display_errors', 1);
 	   $statement->execute();
 	   
 	   echo "<select name='update_id' id ='update_id'>";
+	   echo '<option value=""></option>';
 	   
 	   while($row = $statement->fetch(PDO::FETCH_ASSOC))
 	   {
@@ -260,7 +261,7 @@ ini_set('display_errors', 1);
 	   $statement->execute();
 	   
 	   echo "<select name='remove_id' id ='remove_id'>";
-	   echo "<option value=""></option>";
+	   echo '<option value=""></option>';
 	   
 	   while($row = $statement->fetch(PDO::FETCH_ASSOC))
 	   {
