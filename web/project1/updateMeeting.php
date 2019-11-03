@@ -148,6 +148,8 @@ ini_set('display_errors', 1);
 			  $stmnt2->bindValue(':studentId', $removeId);
 			  $stmnt2->bindValue(':meetingId', $meetingId);
 			  $stmnt2->execute();
+			  
+			  echo "student $first $last removed from meeting<br/>";
 			}
 		  }
 	  }

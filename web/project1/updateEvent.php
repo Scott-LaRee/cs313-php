@@ -98,10 +98,13 @@ ini_set('display_errors', 1);
 			$row = $statement2->fetch(PDO::FETCH_ASSOC);
 			$studentId = $row['id'];	
           	  
+			  echo "studentId = $studentId<br/>";
+			  
 			if ($studentId == 0)
 			{				  
 		      include_once('studentNotFound.php');     
 			}
+			echo "studentId = $studentId<br/>";
 			
 			$statement3 = $db->prepare("INSERT INTO event_attendance (event_id, student_id)
 	                              VALUES (:eventId, :studentId)");
@@ -141,7 +144,7 @@ ini_set('display_errors', 1);
 			{
 			  $stmnt2 = $db->prepare('DELETE FROM event_attendance WHERE
 								student_id = :studentId AND event_id = :eventId');
-			  $stmnt2->bindValue(':studentId', $studentId);
+			  $stmnt2->bindValue(':studentId', $removeId);
 			  $stmnt2->bindValue(':eventId', $eventId);
 			  $stmnt2->execute();
 			}
