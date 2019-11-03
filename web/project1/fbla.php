@@ -25,7 +25,9 @@
  <div id="content">
   <div>
    <h1>FBLA</h1>
-   <p>Add a mock up homepage intro to the FBLA</p>
+   <p>Future Business Leaders of America helps high school students learn
+      about business. This application will help you to track the participation
+	  of your students.</p>
    </div>
  
  </div>

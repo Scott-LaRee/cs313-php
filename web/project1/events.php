@@ -237,7 +237,7 @@ ini_set('display_errors', 1);
    <textarea name="students_update" id="students_update"></textarea><br/>
    <label for="students_remove">Remove Students</label>
    <textarea name="students_remove" id="students_remove"></textarea><br/>
-   <input type="submit" value="View Meeting">
+   <input type="submit" value="Update Event">
    </form>
    
    <h1>Remove Event</h1>
@@ -270,7 +270,7 @@ ini_set('display_errors', 1);
 	 }
    ?>
    
-   <input type="submit" value="View Event">
+   <input type="submit" value="Remove Event">
    </form>
    </div id="remove_div"></div>
    </div>
