@@ -39,19 +39,20 @@ ini_set('display_errors', 1);
   /* query excutes but gets non existent column error.*/
   try {
     $sql = "SELECT * FROM student ORDER BY student_last_name";
-	
+	echo "<table>";
 	foreach($db->query($sql) as $row) 
 	{
-		echo "<table>";
+		
 		echo "<tr><th>Student</th><th>Grad Year</th><th>Membership</th>";
 		echo "<th>Office</th></tr>";
 		echo "<tr><td>" . $row['student_first_name'] . " ";
         echo $row['student_last_name'] . "</td>";
 		echo "<td>" . $row['grad_year'] . '</td><td>';
 		echo $row['membership'] . "</td><td>" . $row['office'] . '</td>';
-		echo "</table><br/>";
+		
 	}
-
+    echo "</table><br/>";
+	
     $db->exec($sql);
 	
 	} 
