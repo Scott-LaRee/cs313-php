@@ -64,7 +64,7 @@ ini_set('display_errors', 1);
 		
 		$sql2 = 'DELETE FROM event_attendance WHERE
 				student_id = :studentId';
-		$request2 = $db->prepare($sql);
+		$request2 = $db->prepare($sql2);
 		$request2->bindValue('studentId', $studentId);
 		$request2->execute();
 		
