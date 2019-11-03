@@ -43,11 +43,8 @@ ini_set('display_errors', 1);
 	  return $data;
       }
 	  
-	  try {
-		  /*I chose to not remove attendance records because
-		  even if a student was removed it does not mean they didn't
-		  attend events and meetings.*/
-		  
+	  try 
+	  {		  
 	  $statement = $db->prepare('SELECT id FROM student WHERE student.student_first_name = :first 
 							AND student.student_last_name = :last');
 	  $statement->bindValue(':first', $first);
@@ -59,6 +56,18 @@ ini_set('display_errors', 1);
 	  
 	  if ($studentId != 0)
 	  {
+		$sql = 'DELETE FROM meeting_attendance WHERE 
+				student_id = :studentId';
+		$request = $db->prepare($sql);
+		$request->bindValue('studentId', $studentId);
+		$request->execute();
+		
+		$sql2 = 'DELETE FROM event_attendance WHERE
+				student_id = :studentId';
+		$request2 = $db->prepare($sql);
+		$request2->bindValue('studentId', $studentId);
+		$request2->execute();
+		
 	    $query = 'DELETE FROM student WHERE
 				student_first_name = :first AND
 				student_last_name = :last';
