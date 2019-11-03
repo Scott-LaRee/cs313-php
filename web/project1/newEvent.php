@@ -65,27 +65,29 @@ ini_set('display_errors', 1);
 	  $studentId = 0;
 	  foreach($students as $student)
 	  {
-		  $name = explode(" ", $student);
-		  $first = $name[0];
-		  $last = $name[1];
+		  if ($student != null)
+		  {
+			$name = explode(" ", $student);
+			$first = $name[0];
+			$last = $name[1];
 		  
-		  $statement2 = $db->prepare('SELECT id FROM student WHERE student.student_first_name = :first 
-		  AND student.student_last_name = :last');
-		  $statement2->bindValue(':first', $first);
-		  $statement2->bindValue(':last', $last);
-		  $statement2->execute();
+			$statement2 = $db->prepare('SELECT id FROM student WHERE student.student_first_name = :first 
+							AND student.student_last_name = :last');
+			$statement2->bindValue(':first', $first);
+			$statement2->bindValue(':last', $last);
+			$statement2->execute();
 		  
-		  $row = $statement2->fetch(PDO::FETCH_ASSOC);
-		  $studentId = $row['id'];	
-          echo "id = $studentId<br/>";	  
+			$row = $statement2->fetch(PDO::FETCH_ASSOC);
+			$studentId = $row['id'];		  
 	  
-	  $statement3 = $db->prepare("INSERT INTO event_attendance (event_id, student_id)
+			$statement3 = $db->prepare("INSERT INTO event_attendance (event_id, student_id)
 	                              VALUES (:eventId, :studentId)");
 	
-	  $statement3->bindValue(':eventId', $eventId);
-	  $statement3->bindValue(':studentId', $studentId);
+			$statement3->bindValue(':eventId', $eventId);
+			$statement3->bindValue(':studentId', $studentId);
 	  
-	  $statement3->execute();
+			$statement3->execute();
+		  }
 	  }
 
 	  echo "Event added";

@@ -143,6 +143,7 @@ ini_set('display_errors', 1);
 	   echo "Error connecting to db. Details: $ex";
 	   die();
 	 }
+	 echo "Event Updated";
 	?>  
    </div>
  
