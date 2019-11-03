@@ -38,19 +38,22 @@ ini_set('display_errors', 1);
     <?php
   /* query excutes but gets non existent column error.*/
   try {
-    $sql = "SELECT * FROM student";
+    $sql = "SELECT * FROM student ORDER BY student_last_name";
 	
 	foreach($db->query($sql) as $row) 
 	{
-		print "<br/>";
-		print $row['student_first_name'] . '-' . $row['student_last_name'];
-		print "-" . $row['grad_year'] . '-' . $row['membership'];
-		print "-" . $row['office'] . '<br/>';
+		echo "<table>";
+		echo "<tr><th>Student</th><th>Graduation Year</th><th>Membership</th>";
+		echo "<th>Office Held</th></tr>";
+		echo "<tr><td>$row['student_first_name'] . ' '";
+        echo $row['student_last_name'] . "</td>";
+		echo "<td>" . $row['grad_year'] . '</td><td>';
+		echo $row['membership'] . "</td><td>" . $row['office'] . '</td>';
+		echo "</table><br/>";
 	}
 
     $db->exec($sql);
 	
-	echo $db;
 	} 
   catch (PDOException $ex)
   {
