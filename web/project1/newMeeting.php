@@ -49,7 +49,7 @@ ini_set('display_errors', 1);
 					VALUES (:date, :type)';
 	  				
 	  $statement = $db->prepare($query);
-	  echo $query;
+	  
 	  $statement->bindValue(':date', $date,PDO::PARAM_STR);
 	  $statement->bindValue(':type', $type);			
 	  $statement->execute();
