@@ -81,27 +81,30 @@ ini_set('display_errors', 1);
 	  $studentId = 0;
 	  foreach($studentsUpdate as $student)
 	  {
-		  $name = explode(" ", $student);
-		  $first = $name[0];
-		  $last = $name[1];
+		  if ($student != null)
+		  {
+			$name = explode(" ", $student);
+			$first = $name[0];
+			$last = $name[1];
 		  
-		  $statement2 = $db->prepare('SELECT id FROM student WHERE student.student_first_name = :first 
-		  AND student.student_last_name = :last');
-		  $statement2->bindValue(':first', $first);
-		  $statement2->bindValue(':last', $last);
-		  $statement2->execute();
+			$statement2 = $db->prepare('SELECT id FROM student WHERE student.student_first_name = :first 
+							AND student.student_last_name = :last');
+			$statement2->bindValue(':first', $first);
+			$statement2->bindValue(':last', $last);
+			$statement2->execute();
 		  
-		  $row = $statement2->fetch(PDO::FETCH_ASSOC);
-		  $studentId = $row['id'];	
+			$row = $statement2->fetch(PDO::FETCH_ASSOC);
+			$studentId = $row['id'];	
           	  
 	  
-	  $statement3 = $db->prepare("INSERT INTO event_attendance (event_id, student_id)
+			$statement3 = $db->prepare("INSERT INTO event_attendance (event_id, student_id)
 	                              VALUES (:eventId, :studentId)");
 	
-	  $statement3->bindValue(':eventId', $eventId);
-	  $statement3->bindValue(':studentId', $studentId);
+			$statement3->bindValue(':eventId', $eventId);
+			$statement3->bindValue(':studentId', $studentId);
 	  
-	  $statement3->execute();
+			$statement3->execute();
+		  }
 	  }
 	  
 	  $text2 = validate($_POST['students_remove']);
@@ -110,25 +113,28 @@ ini_set('display_errors', 1);
 	  $removeId = 0;
 	  foreach($studentsRemove as $student)
 	  {
-		  $name = explode(" ", $student);
-		  $first = $name[0];
-		  $last = $name[1];
+		  if ($student != null)
+		  {
+			$name = explode(" ", $student);
+			$first = $name[0];
+			$last = $name[1];
 		  
-		  $stmnt = $db->prepare('SELECT id FROM student WHERE
+			$stmnt = $db->prepare('SELECT id FROM student WHERE
 					student.student_first_name = :first AND
 					student.student_last_name = :last');
-		  $stmnt->bindValue(':first', $first);
-		  $stmnt->bindValue(':last', $last);
-		  $stmnt->execute();
+			$stmnt->bindValue(':first', $first);
+			$stmnt->bindValue(':last', $last);
+			$stmnt->execute();
 		   
-		  $row = $stmnt->fetch(PDO::FETCH_ASSOC);
-		  $studentId = $row['id'];
+			$row = $stmnt->fetch(PDO::FETCH_ASSOC);
+			$studentId = $row['id'];
 		  
-		  $stmnt2 = $db->prepare('DELETE FROM event_attendance WHERE
+			$stmnt2 = $db->prepare('DELETE FROM event_attendance WHERE
 								student_id = :studentId AND event_id = :eventId');
-		  $stmnt2->bindValue(':studentId', $studentId);
-		  $stmnt2->bindValue(':eventId', $eventId);
-		  $stmnt2->execute();
+			$stmnt2->bindValue(':studentId', $studentId);
+			$stmnt2->bindValue(':eventId', $eventId);
+			$stmnt2->execute();
+		  }
 	  }
 	  
 	  }

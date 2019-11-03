@@ -61,7 +61,7 @@ ini_set('display_errors', 1);
   }
   
   $db = null;
-  echo "page executed";
+  
 ?>
 </div>
  
