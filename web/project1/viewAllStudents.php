@@ -40,10 +40,12 @@ ini_set('display_errors', 1);
   try {
     $sql = "SELECT * FROM student ORDER BY student_last_name";
 	echo "<table>";
+	echo "<tr><th>Student</th><th>Grad Year</th><th>Membership</th>";
+	
 	foreach($db->query($sql) as $row) 
 	{
 		
-		echo "<tr><th>Student</th><th>Grad Year</th><th>Membership</th>";
+		
 		echo "<th>Office</th></tr>";
 		echo "<tr><td>" . $row['student_first_name'] . " ";
         echo $row['student_last_name'] . "</td>";
