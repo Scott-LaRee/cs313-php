@@ -126,8 +126,8 @@ ini_set('display_errors', 1);
 		  
 		  $stmnt2 = $db->prepare('DELETE FROM meeting_attendance WHERE
 								student_id = :studentId AND meeting_id = :meetingId');
-		  $stmnt2->bindValue(':studentId' = $studentId);
-		  $stmnt2->bindValue(':meetingId' = $meetingId);
+		  $stmnt2->bindValue(':studentId', $studentId);
+		  $stmnt2->bindValue(':meetingId', $meetingId);
 		  $stmnt2->execute();
 	  }
 	  

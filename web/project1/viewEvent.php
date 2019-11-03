@@ -72,7 +72,7 @@ ini_set('display_errors', 1);
 
     $db->exec($sql);
 	
-	echo $db;
+	//echo $db;
 	} 
   catch (PDOException $ex)
   {

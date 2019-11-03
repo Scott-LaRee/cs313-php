@@ -77,7 +77,7 @@ ini_set('display_errors', 1);
 		  
 		  $row = $statement2->fetch(PDO::FETCH_ASSOC);
 		  $studentId = $row['id'];	
-          	  
+          echo "id = $studentId<br/>";	  
 	  
 	  $statement3 = $db->prepare("INSERT INTO meeting_attendance (meeting_id, student_id)
 	                              VALUES (:meetingId, :studentId)");
