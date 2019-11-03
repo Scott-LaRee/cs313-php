@@ -31,61 +31,14 @@ ini_set('display_errors', 1);
  <div id="content">
   <div>
    <h1>View Student Info</h1>
-   <form name="view_student" action="student.php" method="POST">
+   <form name="view_student" action="viewStudent.php" method="POST">
      <label for="first_view">First Name</label>
      <input type="text" name="first_view" id="firts">required<br/>
      <label for="last_view">Last Name</label>
      <input type="text" name="last_view" id="last">required<br/>
      <input type="submit" value="View Student">
    </form>
-   <div id="view_div">
-   <?php
-	  $first = "'" . validate($_POST['first_view']) . "'";
-      $last = "'" . validate($_POST['last_view']) . "'";
-
-      function validate($data) {
-	    $data = trim($data);
-	    $data = stripslashes($data);
-	    $data = htmlspecialchars($data);
-	    return $data;
-      }
-  
-    try {
-      $sql = "SELECT * FROM student WHERE student.student_first_name = $first
-		AND student.student_last_name = $last";
-	
-	foreach($db->query($sql) as $row) 
-	{
-		print "<br/>";
-		print "Name: " . $row['student_first_name'] . '' . $row['student_last_name'] . "<br/>";
-		print "Graduation year: " . $row['grad_year'] . "<br/>";
-		if ($row['membership'] != "") 
-		{
-			print 'Membership Level: ' . $row['membership'] . "<br/>";
-		}
-		else
-		{
-			print 'Has not paid for membership';
-		}
-		if ($row['office'] != "")
-		{
-			print "Office Held: " . $row['office'] . '<br/>';
-		}
-		else
-		{
-			print "Does not hold office <br/>";
-		}
-	}
-
-    $db->exec($sql);
-	
-	} 
-  catch (PDOException $ex)
-  {
-	  echo $sql . "<br>" . $ex->getMessage();
-  }
-  ?>
-   </div>
+   <div id="view_div"></div>
    
    <h1>View All Students</h1>
    <form action="viewAllStudents.php">
