@@ -106,15 +106,20 @@ ini_set('display_errors', 1);
 		  $statement->bindValue(':last', $last);
 		  
 		  $statement->execute();
-	  }
 		  
+		  echo $first . " " . $last . " information updated";
+	  }
+		else
+		{
+			echo $first . " " . $last . " not found on list";
+		}			
 		}
 		catch (PDOException $ex)
 		{
 			echo $sql . "<br>" . $ex->getMessage();
 		}
 	  
-	  echo $first . " " . $last . " information updated";
+	  
 	?>  
    </div>
  

@@ -76,6 +76,7 @@ ini_set('display_errors', 1);
 		{
 			echo "student $first $last not found";
 		}
+	  }
 	  catch (PDOException $ex) {
 		  echo "ERROR executing statement Details: $ex";
 	      die();
