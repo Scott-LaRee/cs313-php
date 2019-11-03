@@ -62,9 +62,11 @@ ini_set('display_errors', 1);
 	  /*put each line of text area as an element of an array*/
 	  $students = explode("\n", $text); 
 	  
-	  $studentId = 0;
+	  
 	  foreach($students as $student)
 	  {
+		  $studentId = 0;
+		  
 		  if ($student != null)
 		  {
 			$name = explode(" ", $student);
@@ -79,7 +81,12 @@ ini_set('display_errors', 1);
 		  
 			$row = $statement2->fetch(PDO::FETCH_ASSOC);
 			$studentId = $row['id'];	
-				  
+			
+			if ($studentId == 0)
+			{				  
+		      include_once('studentNotFound.php');     
+			}
+				
 			$statement3 = $db->prepare("INSERT INTO meeting_attendance (meeting_id, student_id)
 	                              VALUES (:meetingId, :studentId)");
 	

@@ -78,9 +78,11 @@ ini_set('display_errors', 1);
 	  
 	  $studentsUpdate = explode("\n", $text); 
 	  
-	  $studentId = 0;
+	  
 	  foreach($studentsUpdate as $student)
 	  {
+		  $studentId = 0;
+		  
 		  if ($student != null)
 		  {
 			$name = explode(" ", $student);
@@ -96,7 +98,11 @@ ini_set('display_errors', 1);
 			$row = $statement2->fetch(PDO::FETCH_ASSOC);
 			$studentId = $row['id'];	
           	  
-	  
+			if ($studentId == 0)
+			{				  
+		      include_once('studentNotFound.php');     
+			}
+			
 			$statement3 = $db->prepare("INSERT INTO event_attendance (event_id, student_id)
 	                              VALUES (:eventId, :studentId)");
 	
@@ -110,9 +116,11 @@ ini_set('display_errors', 1);
 	  $text2 = validate($_POST['students_remove']);
 	  $studentsRemove = explode("\n", $text2);
 	  
-	  $removeId = 0;
+	  
 	  foreach($studentsRemove as $student)
 	  {
+		  $removeId = 0;
+		  
 		  if ($student != null)
 		  {
 			$name = explode(" ", $student);
@@ -127,13 +135,16 @@ ini_set('display_errors', 1);
 			$stmnt->execute();
 		   
 			$row = $stmnt->fetch(PDO::FETCH_ASSOC);
-			$studentId = $row['id'];
-		  
-			$stmnt2 = $db->prepare('DELETE FROM event_attendance WHERE
+			$removeId = $row['id'];
+			
+			if($removeId != 0)
+			{
+			  $stmnt2 = $db->prepare('DELETE FROM event_attendance WHERE
 								student_id = :studentId AND event_id = :eventId');
-			$stmnt2->bindValue(':studentId', $studentId);
-			$stmnt2->bindValue(':eventId', $eventId);
-			$stmnt2->execute();
+			  $stmnt2->bindValue(':studentId', $studentId);
+			  $stmnt2->bindValue(':eventId', $eventId);
+			  $stmnt2->execute();
+			}
 		  }
 	  }
 	  
