@@ -39,7 +39,9 @@ function calculateRate(req, res) {
 
   if (cost != 0) {
     res.render('pages/rates', params);
-  } 
+  } else {
+    console.log('Your item exceeds weight limit');
+  }
 }
 
 function calculateStamped(weight) {
