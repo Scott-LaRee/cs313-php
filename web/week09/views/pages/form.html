@@ -4,7 +4,7 @@
 </head>
 <body>
     <h1>Select mailing options</h1>
-<form name="ship_info">
+<form name="ship_info" action="rates.ejs">
     <label for="type">Type</label>
     <select name="type" id="type">
         <option value=""></option>
@@ -15,6 +15,7 @@
     </select><br/>
     <label for="weight">Weight in ounces</label>
     <input type="text" name="weight" id="weight"><br/>
+    <input type="submit" value="Get Rate">
 </form>
 </body>
 </html>
