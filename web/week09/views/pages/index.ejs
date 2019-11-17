@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <% include ../partials/header.ejs %>
+  <!-- <% include ../partials/header.ejs %> -->
 </head>
 
 <body>
-
+<!-- 
   <% include ../partials/nav.ejs %>
 
 <div class="jumbotron text-center">
@@ -55,12 +55,26 @@
         <li><a href="https://devcenter.heroku.com/articles/deploying-nodejs">Deploying Node Apps on Heroku</a></li>
       </ul>
     </div>
-  </div> <!-- row -->
+  </div> <!-- row --><!--
    <div class="alert alert-info text-center" role="alert">
     Please do work through the Getting Started guide, even if you do know how to build such an application.  The guide covers the basics of working with Heroku, and will familiarize you with all the concepts you need in order to build and deploy your own apps.
   </div>
 </div>
-
-
+ -->
+  
+ <h1>Select mailing options</h1>
+ <form name="ship_info" action="rates.ejs">
+     <label for="type">Type</label>
+     <select name="type" id="type">
+         <option value=""></option>
+         <option value="1">Stamped Letter</option>
+         <option value="2">Metered Letter</option>
+         <option value="3">Large Envelope</option>
+         <option value="4">Package</option>
+     </select><br/>
+     <label for="weight">Weight in ounces</label>
+     <input type="text" name="weight" id="weight"><br/>
+     <input type="submit" value="Get Rate">
+ </form>
 </body>
 </html>
