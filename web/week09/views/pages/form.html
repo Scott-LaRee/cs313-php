@@ -3,14 +3,18 @@
 <head>
 </head>
 <body>
+    <h1>Select mailing options</h1>
 <form name="ship_info">
+    <label for="type">Type</label>
     <select name="type" id="type">
+        <option value=""></option>
         <option value="1">Stamped Letter</option>
         <option value="2">Metered Letter</option>
         <option value="3">Large Envelope</option>
         <option value="4">Package</option>
-    </select>
-    <input type="text" name="weight" id="weight">
+    </select><br/>
+    <label for="weight">Weight</label>
+    <input type="text" name="weight" id="weight"><br/>
 </form>
 </body>
 </html>
