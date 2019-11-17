@@ -63,7 +63,7 @@
  -->
   
  <h1>Select mailing options</h1>
- <form name="ship_info" action="rates.ejs" method="GET">
+ <form name="ship_info" action="/getRate" method="GET">
      <label for="type">Type</label>
      <select name="type" id="type">
          <option value=""></option>
@@ -76,6 +76,6 @@
      <input type="text" name="weight" id="weight"><br/>
      <input type="submit" value="Get Rate">
  </form>
- 
+
 </body>
 </html>
