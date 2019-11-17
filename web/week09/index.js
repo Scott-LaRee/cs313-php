@@ -9,5 +9,5 @@ const app = express();
   app.get('/', (req, res) => res.render('pages/index'));
   
 
-app.get('/getRate', (req, res) => res.render('pages/rates'));
+app.get('/getRate', (req, res) => res.render('pages/rates.ejs'));
 app.listen(PORT, () => console.log(`Listening on ${ PORT }`));
