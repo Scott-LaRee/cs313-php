@@ -1,3 +1,20 @@
+/* teach02.css */
+
 .text:hover {
 	font-weight: bold;
+}
+
+#firstDiv {
+	background-color: #00ADA3;
+	font-size: 3em;
+}
+
+#secondDiv {
+	background-color: #11DA52;
+	font-size: 1.5 em;
+}
+
+#thirdDiv {
+	background-color: #BA02D3;
+	font-size: 2em;
 }

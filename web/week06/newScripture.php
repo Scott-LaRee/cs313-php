@@ -18,7 +18,7 @@ require ("dbConnect.php");
   <label for="book">Book</label><input type="text" name="book"><br>
   <label for="chapter">Chapter</label><input type="text" name="chapter"><br>
   <label for="verse">Verse</label><input type="text" name="verse"><br>
-  <label for="content">Content</label><textarea rows="5" cols="50"></textarea>
+  <label for="content">Content</label><textarea rows="5" cols="50"></textarea><br>
   
   <?php
 

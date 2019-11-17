@@ -5,58 +5,7 @@
 *
 * cennect to scriptures database on heroku
 */
-/*
-try 
-{
-	$dbUrl = getenv('DATABASE_URL');
-	
-	if (!isset($dbUrl) || empty($dbUrl)) {
-	$dbOpts = parse_url($dbURL);
-	
-	$dbHost = $dbOpts["host"];
-	$dbPort = $dbOpts["port"];
-	$dbUser = $dbOpts["user"];
-	$dbPassword = $dbOpts["pass"];
-	$dbName = ltrim($dbOpts["path"], '/');
-	
-	$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-}
-catch (PDOEXCEPTION $ex)
-{
-	echo 'Error! ' . $ex->getMessage();
-	die();
-}
-*/
-
-function get_db() {
-	$db = NULL;
-	try {
-		$dbUrl = getenv('DATABASE_URL');
-		
-	if (!isset($dbUrl) || empty($dbUrl)) {
-		$dbUrl = "postgres://ls981@localhost;5432/scripturesDb";
-	}
-	
-	$dbopts = parse_url($dbUrl);
-	
-	$dbHost = $dbopts["host"];
-	$dbPort = $dbopts["port"];
-	$dbUser = $dbopts["user"];
-	$dbPassword = $dbopts["pass"];
-	$dbName = ltrim($dbopts["path"], '/');
-	
-	$db = new PDO("psql:host=$dbHost; port=$dbPort; dbname=$dbName", $dbUser, $dbPassword);
-	
-	$db->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
-	}
-	catch (PDOException $ex) {
-		echo "Error connecting to DB. Details: $ex";
-		die();
-	}
-	
-	return $db;
-}
-
+require "dbConnect.php";
 /*
 echo '<h1>Scripture Resources</h1>';
 

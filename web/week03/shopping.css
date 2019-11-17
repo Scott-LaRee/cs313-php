@@ -96,3 +96,13 @@ header h1 {
     margin: 5px;
     padding: 5px;
 }
+
+table {
+	grid-column-start: 1;
+	grid-column-end:2;
+}
+
+#contents {
+	grid-column-start: 1;
+	grid-column-end:2;
+}

@@ -48,7 +48,6 @@ ini_set('display_errors', 1);
 
     $db->exec($sql);
 	
-	echo $db;
 	} 
   catch (PDOException $ex)
   {
