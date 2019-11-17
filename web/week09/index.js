@@ -45,13 +45,13 @@ function calculateRate(req, res) {
 function calculateStamped(weight) {
   var cost = 0;
 
-  if (weight < 1) {
+  if (weight <= 1) {
     cost = 0.55;
-  } else if (weight < 2) {
+  } else if (weight <= 2) {
     cost = 0.70;
-  } else if (weight < 3) {
+  } else if (weight <= 3) {
     cost = 0.85;
-  } else if (weight < 3.5) {
+  } else if (weight <= 3.5) {
     cost = 1;
   } else {
     cost = calculateFlats(weight);
@@ -62,13 +62,13 @@ function calculateStamped(weight) {
 
 function calculateMetered(weight) {
   var cost = 0;
-  if (weight < 1) {
+  if (weight <= 1) {
     cost = 0.5;
-  } else if (weight < 2) {
+  } else if (weight <= 2) {
     cost = 0.65;
-  } else if (weight < 3) {
+  } else if (weight <= 3) {
     cost = 0.8;
-  } else if (weight < 3.5) {
+  } else if (weight <= 3.5) {
     cost = 0.95
   } else {
     cost = calculateFlats(weight);
@@ -79,31 +79,31 @@ function calculateMetered(weight) {
 function calculateFlats(weight) {
   var cost = 0;
 
-  if (weight < 1) {
+  if (weight <= 1) {
     cost = 1;
-  } else if (weight < 2) {
+  } else if (weight <= 2) {
     cost = 1.15;
-  } else if (weight < 3) {
+  } else if (weight <= 3) {
     cost = 1.3;
-  } else if (weight < 4) {
+  } else if (weight <= 4) {
     cost = 1.45;
-  } else if (weight < 5) {
+  } else if (weight <= 5) {
     cost = 1.6; 
-  } else if (weight < 6) {
+  } else if (weight <= 6) {
     cost = 1.75;
-  } else if (weight < 7) {
+  } else if (weight <= 7) {
     cost = 1.9;
-  } else if (weight < 8) {
+  } else if (weight <= 8) {
     cost = 2.05;
-  } else if (weight < 9) {
+  } else if (weight <= 9) {
     cost = 2.2;
-  } else if (weight < 10) {
+  } else if (weight <= 10) {
     cost = 2.35;
-  } else if (weight < 11) {
+  } else if (weight <= 11) {
     cost = 2.5;
-  } else if (weight < 12) {
+  } else if (weight <= 12) {
     cost = 2.65;
-  } else if (weight < 13) {
+  } else if (weight <= 13) {
     cost = 2.8;
   } 
 
@@ -113,13 +113,13 @@ function calculateFlats(weight) {
 function calculatePackage(weight) {
   var cost = 0;
 
-  if (weight < 4) {
+  if (weight <= 4) {
     cost = 3.66;
-  }  else if (weight < 8) {
+  }  else if (weight <= 8) {
     cost = 4.39;
-  } else if (weight < 12) {
+  } else if (weight <= 12) {
     cost = 5.19;
-  } else if (weight < 13) {
+  } else if (weight <= 13) {
     cost = 5.71;
   } 
   
