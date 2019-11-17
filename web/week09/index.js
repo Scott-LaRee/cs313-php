@@ -16,7 +16,7 @@ app.listen(PORT, () => console.log(`Listening on ${ PORT }`));
 
 function calculateRate(req, res) {
   const type = request.query.type;
-  const weight = request.query.wieght;
+  const weight = request.query.weight;
   var cost = 0;
 
   switch (type) {
@@ -38,7 +38,7 @@ function calculateRate(req, res) {
   params = { weight, weight, cost, cost};
 
   if (cost != 0) {
-    res.render('/week09/views/pages/rates.ejs', params);
+    res.render('pages/rates', params);
   } 
 }
 
