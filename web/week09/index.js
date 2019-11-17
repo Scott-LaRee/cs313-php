@@ -15,8 +15,8 @@ app.listen(PORT, () => console.log(`Listening on ${ PORT }`));
 
 
 function calculateRate(req, res) {
-  const type = request.query.type;
-  const weight = request.query.weight;
+  const type = req.query.type;
+  const weight = req.query.weight;
   var cost = 0;
 
   switch (type) {
